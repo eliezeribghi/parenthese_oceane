@@ -2,10 +2,11 @@
 @use "../utils/mixins";
 
 .from-section {
+
   position: relative;
   width: 100vw;
   height: auto;
-  padding: 5% 10% 15% 10%;
+  padding: 25% 10% 15% 10%;
 
 }
 
@@ -118,13 +119,29 @@ label {
   margin: 3em;
   font-size: .3em;
 }
+@include mixins.tablet {
+
+  .from-section{
+    margin: 1%;
+    padding: 5%  10% 10% 10%;
+  }
+
+
+
+}
+
+
 
 @include mixins.desktop {
 
   .from-section {
-
-    padding: 3% 30% 10% 30%;
+    margin: 3%;
+    padding: 0% 35% 10% 35%;
+    max-width: 3000px;
+    margin-left: auto; /* Pour centrer l'élément horizontalement */
+    margin-right: auto; /* Pour centrer l'élément horizontalement */
   }
+  
 
   .header-contact {
 

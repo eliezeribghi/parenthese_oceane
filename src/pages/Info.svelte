@@ -1,6 +1,6 @@
 <!-- App.svelte -->
 <script>
-    // Aucun script n'est nécessaire pour cette page statique
+  import { link } from "svelte-spa-router";
 </script>
 
 <div class="container-map">
@@ -39,8 +39,13 @@
         <p>
             Nous sommes impatients de vous accueillir dans notre gîte à
             Saint-Vincent-sur-Jard ! Si vous avez besoin de plus d'informations
-            ou d'assistance pour trouver notre emplacement, n'hésitez pas à nous
-            contacter.
+            ou d'assistance pour trouver notre emplacement, n'hésitez pas à nous <a
+            href="/contact"
+            use:link
+            aria-label="nous contacter via le lien"
+            tabindex="0"
+          >
+            contacter. </a>
         </p>
     </div>
 </div>
