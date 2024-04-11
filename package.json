@@ -1,0 +1,31 @@
+{
+  "name": "oceane",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": " vite build",
+    "serve": "vite preview",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@svelteuidev/core": "^0.15.4",
+    "svelte": "^4.2.12",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8",
+    "vite-plugin-imagemin": "^0.6.1"
+  },
+  "description": "This template should help get you started developing with Svelte in Vite.",
+  "main": "svelte.config.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^10.5.1",
+    "sass": "^1.74.1",
+    "svelte-spa-router": "^4.0.1",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}
