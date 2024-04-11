@@ -3,7 +3,7 @@
     // Aucun script n'est nécessaire pour cette page statique
 </script>
 
-<div class="container">
+<div class="container-map">
     <div class="custom-header">
         <h1>Itinéraire vers notre gîte</h1>
     </div>
@@ -47,14 +47,15 @@
 
 <style>
     /* Styles généraux */
-    .container {
-        margin-top: 10em;
+    .container-map {
+        margin-top: 7em;
         line-height: 1.6;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: auto;
         height: 100vh;
+        margin-bottom: 13em;
     }
 
     .custom-header {
@@ -82,15 +83,32 @@ font-size: 1.4em;
    
     .text_footer p{
 
-padding-bottom: 2em;
+padding: 2em ;
     }
     .instructions h2 {
-padding: 1em;
+padding: 1em  ;
 
     }
 
-    /* Styles responsives */
+
     @media screen and (min-width: 48em) {
+.container-map{
+margin: 3em 0 0 0;
+height: 100vh;
+}
+        .custom-header {
+            padding: 1rem;
+            background-color: #fff;
+            color: #1e55b3;
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        .custom-main {
+            flex-direction: row;
+            justify-content: space-between;
+
+}
         .custom-main {
             flex-direction: row;
             justify-content: space-between;
