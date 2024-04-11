@@ -2,14 +2,14 @@
 @use "../utils/mixins";
 
 
-    .container {
-        margin-top: 10em;
+    .container-map {
+
+        margin-top: 7em;
         line-height: 1.6;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: auto;
-        height: 100vh;
+       
     }
 
     .custom-header {
@@ -43,17 +43,39 @@ padding-bottom: 2em;
 padding: 1em;
 
     }
+    .text_footer p {
+        margin: 0 20% 0 20%;
+text-align: center;
 
+    }
     /* Styles responsives */
     @media screen and (min-width: 48em) {
-        .custom-main {
-            flex-direction: row;
-            justify-content: space-between;
+        .container-map{
+        margin-top: 2.5em;
+        height: 100vh;
         }
-
-        .instructions {
-            flex-basis: 100vh;
-            padding-right: 4rem;
-            margin-bottom: 5em;
+                .custom-header {
+                    padding: 1rem;
+                    background-color: #fff;
+                    color: #1e55b3;
+                    font-size: 1.6em;
+                    text-align: center;
+                }
+        
+                .custom-main {
+                    flex-direction: row;
+                    justify-content: space-between;
+        
         }
-    }
+                .custom-main {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+        
+                .instructions {
+                    flex-basis: 100vh;
+                    padding-right: 4rem;
+                    margin-bottom: 5em;
+                }
+          
+            } 
