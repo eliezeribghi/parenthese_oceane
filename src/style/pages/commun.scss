@@ -449,15 +449,20 @@ ul {
     }
 
   .squareService h2{
-
     margin: 2%;
   }
+
     /* Styles pour la liste des services */
     .serviceList {
+      
         list-style: none;
         padding: 1%;
     }
+.squareService h2{
 
+    color: $primary;
+   
+}
     /* Styles pour les éléments de la liste des services */
     .serviceList li {
         text-align: center;

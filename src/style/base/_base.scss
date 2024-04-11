@@ -42,59 +42,56 @@ p {
 }
 
 h1 {
-
-
-  font-size: 1.20em;
+  font-size: 24px; /* Correspond à environ 1.5em */
 }
 
 h2 {
-  font-size: 1.10em;
-
+  font-size: 20px; /* Correspond à environ 1.25em */
 }
 
 h3 {
-  font-size: 0.870em;
+  font-size: 16px; /* Correspond à environ 1em */
 }
 
 p {
   letter-spacing: .06em;
-  font-size: 0.65em;
+  font-size: 13px; /* Correspond à environ 0.8125em */
 }
-
 // Requêtes media pour les tablettes
 @include mixins.tablet {
   h1 {
-    font-size: 1.375em; // 22px 
+    font-size: 22px; /* Correspond à 1.375em */
   }
 
   h2 {
-    font-size: 1.125em; // 18px 
+    font-size: 18px; /* Correspond à 1.125em */
   }
 
   h3 {
-    font-size: 0.875em; // 14px 
+    font-size: 14px; /* Correspond à 0.875em */
   }
 
   p {
-    font-size: 0.75em; // 12px 
+    font-size: 12px; /* Correspond à 0.75em */
   }
 }
+
 
 // Requêtes media pour les écrans de bureau
 @include mixins.desktop {
   h1 {
-    font-size: 1.875em;
+    font-size: 30px; /* Correspond à environ 1.875em */
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 24px; /* Correspond à 1.2em */
   }
 
   h3 {
-    font-size: 1.125em;
+    font-size: 20px; /* Correspond à 1.125em */
   }
 
   p {
-    font-size: 0.875em;
+    font-size: 14px; /* Correspond à 0.875em */
   }
 }
