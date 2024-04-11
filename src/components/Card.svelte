@@ -13,6 +13,7 @@
     <div class="gites-rental">
         {#each rentals as { name, location, details, imageUrl, link, title }}
             <div class="imageGites">
+                
                 <img class="rental-image" src={imageUrl} alt={title + " image"} />
 
                 <div class="rental-card">

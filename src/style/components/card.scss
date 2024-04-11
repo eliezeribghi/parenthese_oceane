@@ -5,8 +5,8 @@
 
     overflow: hidden;
     background-color: $primary;
-    width: 100vw;
-    
+    min-width: 100vw;
+
     height: auto;
     padding: 6%;
 }
@@ -45,29 +45,29 @@
     margin-top: 18%;
     opacity: 1;
     transform: matrix(1, 0, 0, 1, 10, 1);
-    width: auto;
-     height: auto;
+    width: 80%;
+    height: 100%;
     padding-right: 10%;
 }
 
 .rental-card {
-    line-height: 1;
+    line-height: .9;
     letter-spacing: 1vw;
     color: #000000b6;
-    padding: 0 4% 4% 4%;
+    padding: 4%;
     left: 2%;
     font-weight: 300;
     margin: 1.7em;
     position: relative;
     background-color: rgba(225, 225, 225, 0.426);
-    width: 100%;
+    width: 80%;
     height: auto;
     margin-top: calc(-10% - 5%);
     overflow: hidden;
 }
 
 .textCardH2 {
-  margin: 1em;
+    margin: 1em;
     text-align: left;
 
 
@@ -86,34 +86,35 @@
 
 @include mixins.tablet {
     .rental-card {
-        position: fixed;
+
         line-height: 1.3;
-        letter-spacing: 1vw;
-        color: #000000b6;
+        letter-spacing: .1vw;
+
         padding: 3%;
         position: relative;
         background-color: rgba(225, 225, 225, 0.5);
-        width: 70%;
-        margin-top: calc(-1% - 15%);
+        max-width: 35em;
+        margin-top: calc(6% - 15%);
         left: 15%;
         overflow: hidden;
     }
 
     .rental-image {
         padding: 0%;
-        height: 30vh;
+        height: 40vh;
         width: auto;
-  
+
     }
 
 }
+
 
 @include mixins.desktop {
     .section3 {
 
         margin-top: 0%;
         padding: 2% 6% 7% 6%;
-        max-width: 100%;
+        width: 100vh;
         height: auto;
     }
 
@@ -133,15 +134,25 @@
     .gites-rental {
 
         display: flex;
-
         align-items: center;
         justify-content: space-between;
     }
 
+    .imageGites {
+        width: 33.33%;
+      
+        padding: 0 1em;
+        /* Espacement entre les images */
+        box-sizing: border-box;
+        /* Inclut les bordures et le padding dans la largeur totale */
+        flex: 0 0 auto;
+        /* Empêche le rétrécissement des éléments flexibles */
+    }
+
     .rental-image {
-        width: 15.1875em;
-        height: 100%;
-   
+        width: 90%;
+        height: auto;
+        padding: 0;
         justify-content: space-between;
         margin-top: 0;
         opacity: 1;
@@ -150,14 +161,14 @@
     }
 
     .rental-card {
+        margin-top: calc(1em - 15%);
         text-align: start;
         letter-spacing: 0;
         color: #000000b6;
-        font-size: 4px;
         background-color: rgba(225, 225, 225, 0.5);
-        width: 100%;
-        height: 10%;
-        left: 8%;
+        width: 88%;
+        height: auto;
+        left: 2.7em;
 
     }
 
