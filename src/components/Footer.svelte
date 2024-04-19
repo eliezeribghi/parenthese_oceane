@@ -47,7 +47,7 @@
             aria-label="Conditions Générales de Vente"
             tabindex="0"
           >
-            Conditions Générales de Vente</a
+            CGV</a
           >
         </div>
       </div>
