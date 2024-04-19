@@ -31,6 +31,7 @@
         <iframe
             src="https://www.google.com/maps/d/embed?mid=1f3EkxUy4VLsVmHgcalpX69A2EFahOGA&ehbc=2E312F&noprof=1"
             width="100%"
+            
             height="380"
             title="Google map"
         ></iframe>

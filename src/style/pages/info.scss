@@ -3,10 +3,9 @@
 
 
 .container-map {
-height: 100vh;
-width: 100vh;
 
-    margin-top: 7em;
+
+    margin-top: 5em;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@ width: 100vh;
 }
 
 .custom-header {
-
+margin: 5em;
     color: #1e55b3;
     font-size: 1.4em;
     background-color: #fff;
@@ -60,11 +59,14 @@ text-decoration: none;
 @media screen and (min-width: 48em) {
     .container-map {
    
-
         margin-top: 10em;
         height: auto;
     }
+    .custom-main{
 
+     width: 100%;
+
+    }
     .custom-header {
         padding: 1rem;
         background-color: #fff;
@@ -74,7 +76,6 @@ text-decoration: none;
     }
 
     .custom-main {
-             height: 50vh;
         flex-direction: row;
         justify-content: space-between;
 
@@ -89,6 +90,10 @@ text-decoration: none;
         flex-basis: 100vh;
         padding-right: 4rem;
         margin-bottom: 5em;
+    }
+    .text_footer{
+
+        margin: 8em 0 5em 0;
     }
 
 }
