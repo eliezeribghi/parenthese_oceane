@@ -138,9 +138,12 @@ window.addEventListener("scroll", () => {
 <!-- description -->
 
 <section aria-labelledby="pageTitle" class="descriptionHeader">
-  <div>
-    <h1><strong class="titreDescription">Saint-Vincent-sur-Jard</strong></h1>
+  <div role="heading" aria-level="1">
+    <h1>
+      <strong class="titreDescription" aria-label="Nom du lieu">Saint-Vincent-sur-Jard</strong>
+    </h1>
   </div>
+  
 
   <article class="main-content">
     <p>
@@ -171,10 +174,10 @@ window.addEventListener("scroll", () => {
     <p>
       Niché sur les côtes venteuses de l'Atlantique, Saint-Vincent-sur-Jard est
       un petit bijou de la Vendée, offrant un mélange envoûtant de charme
-      historique, de paysages naturels préservés et de détente balnéaire.
+      historique, de paysages naturels préservés et de détente balnéaire. <br>
    
         Ce village côtier, baigné de la lumière douce du soleil, séduit les
-        visiteurs par son atmosphère paisible et son riche patrimoine. Du
+        visiteurs par son atmosphère paisible et son riche patrimoine. <br> Du
         célèbre jardin de Georges Clémenceau aux sentiers sauvages de randonnée,
         chaque coin de Saint-Vincent-sur-Jard révèle une facette unique de son
         histoire et de sa beauté naturelle.
@@ -192,11 +195,14 @@ window.addEventListener("scroll", () => {
   <span></span>
 </button>
 
-<!-- Lieux -->
 
 <section class="sectionTexteLieu"></section>
 <!-- Lieux -->
 <section class="sectionTexteLieu">
+  <div role="heading" aria-level="2" class="titlt-lieu">
+    <h2>Explorez des lieux </h2>
+  </div>
+  
   {#each places as place (place.id)}
     <div class="tourist-site scroll-animation" aria-label={place.title} role="region">
       <div class="site-image">
@@ -230,17 +236,19 @@ window.addEventListener("scroll", () => {
 <!-- Modal -->
 <section>
   {#if showModal}
+  
   <div class="modalLieu" role="dialog" aria-modal="true">
+    
     <div class="modalContent">
       <span class="close-button" role="button" tabindex="0" on:click={closeModal} on:keydown={(event) => { if (event.key === 'Enter' || event.key === 'Escape') { closeModal(); } }}>&times;</span>
-      <h2>{modalContent.title}</h2>
+ 
       <img 
         loading="lazy"
         src={modalContent.src}
         alt={modalContent.alt}
         title={modalContent.name}
       />
-  
+       <h2>{modalContent.title}</h2>
       <h3>Description</h3>
       <p>{modalContent.description}</p>
       <h3>Intérêt touristique</h3>

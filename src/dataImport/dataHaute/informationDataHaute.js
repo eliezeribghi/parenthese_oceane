@@ -3,7 +3,7 @@ const informations = [
     name: "Marée Haute",
     title: "Gite 2 pièces",
     description:
-      "Découvrez le confort d'une maison ancienne rénovée. <br/><br/> Parfait pour deux personnes, ce logement de 27m2 propose une cuisine équipée, une chambre de 12m2 avec lit king-size et panderie et une salle d'eau. <br/><br/> Profitez d'une terrasse privative et partagez un vaste jardin de 3000 mètres carrés avec des équipements ludiques.",
+      "Découvrez le confort d'une maison ancienne rénovée. <br/><br/> Parfait pour deux personnes, ce logement de 27m2 propose une cuisine équipée, une chambre de 12m2 avec lit king-size et penderie et une salle d'eau. <br/><br/> Profitez d'une terrasse privative et partagez un vaste jardin de 3000 mètres carrés avec des équipements ludiques.",
     roomComposition: ["1 chambre (1 lit 160x200)"],
     tarifs: [
       { label: "À partir de", amount: "51,43 €", isBold: true },
@@ -23,9 +23,9 @@ const myAccommodation = [
     squareMeter: 27,
     svgPaths: [
       { id: 1, path: "./assets/public/guests.svg", title: "Capacity", text: "Hôtes" },
-      { id: 2, path: "./assets/public/bedrooms.svg", title: "Number of rooms", text: "Chambre" },
+      { id: 2, path: "./assets/public/bedrooms.svg", title: "Number of rooms", text: "Chambres" },
       { id: 3, path: "./assets/public/shower.svg", title: "Number of bathrooms", text: "Douche " },
-      { id: 4, path: "./assets/public/beds.svg", title: "Number of beds", text: "Lits" },
+      { id: 4, path: "./assets/public/beds.svg", title: "Number of beds", text: "Lit" },
       { id: 5, path: "./assets/public/area.svg", title: "Surface", text: "m2" },
     ],
   },

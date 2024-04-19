@@ -26,13 +26,13 @@
           <a href="/info" use:link aria-label="Info" tabindex="0">Info</a>
 
           <a
-            href="/infStVincentsurJardo"
+            href="/StVincentsurJard"
             use:link
             aria-label="StVincentsurJard"
             tabindex="0"
           >
-            StVincentsurJard</a
-          >
+            StVincentsurJard</a>
+
           <a
             href="/privacyPolicy"
             use:link
@@ -42,13 +42,13 @@
             Charte de Confidentialité</a
           >
           <a
-          href="/Agreement"
-          use:link
-          aria-label="Conditions Générales de Vente"
-          tabindex="0"
-        >
-        Conditions Générales de Vente</a
-        >
+            href="/Agreement"
+            use:link
+            aria-label="Conditions Générales de Vente"
+            tabindex="0"
+          >
+            Conditions Générales de Vente</a
+          >
         </div>
       </div>
 
@@ -83,7 +83,7 @@
         <p>
           Téléphone : <a
             href="tel:+33123456789"
-            aria-label="Numéro de téléphone">+33 1 23 45 67 89</a
+            aria-label="Numéro de téléphone">+33 06 37 66 38 66</a
           >
         </p>
         <a

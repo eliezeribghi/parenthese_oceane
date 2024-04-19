@@ -93,14 +93,16 @@ label {
 
 .submit-button {
   padding: 3% 15% 3% 15%;
-  border: solid $primary;
+  border: none;
+  background-color: $primary;
+  color: $primary-light;
   cursor: pointer;
 
 }
 
 .submit-button:hover {
-  background-color: $primary;
-  color: $primary-light;
+  background-color: $primary-light;
+  color: $primary;
   opacity: 1;
 
 }
@@ -119,11 +121,12 @@ label {
   margin: 3em;
   font-size: .3em;
 }
+
 @include mixins.tablet {
 
-  .from-section{
+  .from-section {
     margin: 1%;
-    padding: 5%  10% 10% 10%;
+    padding: 5% 10% 10% 10%;
   }
 
 
@@ -133,15 +136,33 @@ label {
 
 
 @include mixins.desktop {
+  .main-content-desktop {
+
+    padding: 0 23em 0 23em;
+
+
+  }
+
+  .main-content-desktop p {
+    text-align: center;
+    font-size: 1.7em;
+
+  }
 
   .from-section {
     margin: 3%;
-    padding: 0% 35% 10% 35%;
-    max-width: 3000px;
-    margin-left: auto; /* Pour centrer l'élément horizontalement */
-    margin-right: auto; /* Pour centrer l'élément horizontalement */
+    padding: 3% 35% 10% 35%;
+    max-width: 300em;
+    margin-left: auto;
+    /* Pour centrer l'élément horizontalement */
+    margin-right: auto;
+    /* Pour centrer l'élément horizontalement */
   }
-  
+
+  .sectionTexteLieu {
+
+    padding: 3em 20em 5em 20em;
+  }
 
   .header-contact {
 

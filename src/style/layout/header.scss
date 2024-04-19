@@ -20,7 +20,7 @@
 .menuHeader {
   left: 0%;
   margin: 0%;
-  padding: 2%;
+  padding: 1%;
   z-index: 99;
   position: fixed;
   top: 0;
@@ -43,7 +43,8 @@
 }
 
 .menuHeader li {
-  margin: 0.5rem;
+   white-space: nowrap;
+
 }
 
 .menuHeader li:not(:last-child) {
@@ -67,7 +68,7 @@
   left: 8%;
   height: auto;
   width: 2em;
-  transform: scale(1.5);
+  transform: scale(2.1);
 }
 
 @include mixins.tablet {
@@ -89,16 +90,16 @@
   }
 
   .logoHome {
-    top: 2em;
-    transform: scale(1.5);
-    left: 4em;
+    top: 3.5em;
+    transform: scale(2.7);
+    left: 3em;
 
   }
 
   .menuHeader {
 
 
-    padding: 0.8%;
+    padding: 2.5em;
     z-index: 99;
     display: flex;
     justify-content: flex-end;
@@ -114,13 +115,17 @@
   }
 
   .menuHeader .menulink {
-    margin-top: 1.6em;
-    padding: 0.7rem;
-    margin-right: 10px;
+    margin-top: .6em;
+    padding: 1em;
+    margin-right: .1em;
     transition: ease-in-out 0.4s all;
   }
+  .menulink {
 
-  .menulink a {
-    font-size: .8em;
-  }
+    font-size: .6em;
+
+ min-width: 1em;
+  
+
+ }
 }

@@ -17,7 +17,7 @@
     height: auto;
 }
 
-.title {
+.title_card {
     letter-spacing: 2px;
 
     font-weight: 300;
@@ -29,7 +29,7 @@
     margin-bottom: 6vw;
 }
 
-.title::after {
+.title_card_card::after {
     content: "";
     position: absolute;
     bottom: -60%;
@@ -118,16 +118,16 @@
         height: auto;
     }
 
-    .title {
-        letter-spacing: 2px;
-        font-size: 1.3rem;
-        padding: 0.7em;
+    .title_card {
+        letter-spacing: .2em;
+  
+        padding: .1em;
         text-align: center;
         color: $primary-light;
         margin-bottom: 6vw;
     }
 
-    .title::after {
+    .title_card::after {
         display: none;
     }
 

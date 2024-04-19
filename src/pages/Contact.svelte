@@ -69,7 +69,18 @@ const handleSubmit = async () => {
     formData.errorMessage = "Une erreur s'est produite lors de la soumission du formulaire. Veuillez réessayer plus tard.";
   }
 };
+  // Fonction pour remonter en haut de la page
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0, // Navigation vers le haut jusqu'à une position de 0 pixels
+      behavior: 'smooth' // Option pour un défilement fluide
+    });
+  }
 
+  // Appeler la fonction scrollToTop lorsque la page est chargée
+  window.onload = function() {
+    scrollToTop();
+  };
 </script>
 
 <section class="from-section">

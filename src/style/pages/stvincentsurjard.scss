@@ -10,7 +10,7 @@
   height: auto;
 }
 
-span .titreDescription {
+.titreDescription {
 
   font-size: 1.5em;
 }
@@ -227,12 +227,13 @@ span .titreDescription {
 
 .modalContent {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 20vh auto;
   padding: 2em;
   border: 1px solid $primary;
   width: 85%;
   height: auto;
   border-radius: 1em;
+  padding: 4em;
 }
 
 .modalContent img {
@@ -240,13 +241,14 @@ span .titreDescription {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 15em;
-  height: 15em;
+  width: 17vh;
+  height: 17vh;
   object-fit: cover;
+
 }
 
 .modalContent h2 {
-  margin-top: -1.5em;
+  margin-top: 1.5em;
   color: $primary;
   font-size: 1.4em;
 
@@ -254,7 +256,7 @@ span .titreDescription {
 
 .modalContent h3 {
   color: $primary;
-  margin: 10% 0 5% 0;
+  margin: 5% 0 5% 0;
   font-size: 1.3em;
 
 }
@@ -275,11 +277,16 @@ span .titreDescription {
 }
 
 .modalContent a:hover {
-  color: #b31e1e78;
+  color: #636363;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .close-button {
+  position: relative;
+  top: -70px;
+  right: -50px;
+  padding: 10px;
+  cursor: pointer;
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -292,7 +299,13 @@ span .titreDescription {
   text-decoration: none;
   cursor: pointer;
 }
+.titlt-lieu h2{
+  color: $primary;
+  margin-top: 0;
+  font-size: 1.8em;
 
+ margin-bottom: 3em;
+}
 @include mixins.tablet {
   .tourist-site {
     flex-direction: row;
@@ -309,6 +322,14 @@ span .titreDescription {
   .modalLieu {
     margin-top: 0;
   }
+  .modalContent img {
+  
+    width: 15vh;
+height: 15vh;
+  }
+  .modalContent p {
+    margin: 0 10vh 0 10vh;
+  }
 }
 
 @include mixins.desktop {
@@ -322,11 +343,13 @@ span .titreDescription {
 
   .main-content-desktop {
     display: block;
+    min-width: 1700px;
     margin: 5em 5em 0em 5em;
     font-size: 18px;
     line-height: 1.6;
     padding-bottom: 5%;
     border-bottom: 0.5px solid $primary;
+    height: 80%;
   }
 
   .main-content-desktop .logoVendee {
@@ -336,7 +359,21 @@ span .titreDescription {
 
   }
 
+  .titlt-lieu{
+  
+    color: $primary;
+     
+      }
+      .titlt-lieu h2{
+        margin-top: 0;
+        font-size: 2.5em;
+    
+       margin-bottom: 3em;
+      }
   .sectionTexteLieu {
+    max-width: 170em;
+    margin: 2em 35em 5em 35em;
+    padding: 0;
     margin-top: 0;
   }
 
@@ -357,14 +394,15 @@ span .titreDescription {
   }
 
   .modalLieu {
+  
+ 
+  
+   
+padding: 0  30% 0% 30%;
 
-    padding: 0 6em 0 6em;
   }
 
-  .modalContent {
 
-    overflow-y: auto;
-  }
 
   .modalContent h3 {
 
@@ -372,9 +410,14 @@ span .titreDescription {
   }
 
   .modalContent p {
-    margin: 0;
+    margin: 0 10vh 0 10vh;
   }
+  .modalContent img {
 
+    width: 20vh;
+    height: 20vh;
+  
+  }
   .customDialog {
     position: fixed;
     top: 50%;
@@ -389,4 +432,7 @@ span .titreDescription {
     justify-content: center;
     align-items: center;
   }
+  ::-webkit-scrollbar {
+    display: none; /* Pour les navigateurs basés sur WebKit comme Chrome et Safari */
+}
 }

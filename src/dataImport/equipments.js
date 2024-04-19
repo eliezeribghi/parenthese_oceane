@@ -1,14 +1,24 @@
 const equipementsItems = [
   
   {
-    nom: "Drap (Lits faits à l'arrivée) ",
+    nom: "Draps (Lits faits à l'arrivée) ",
     image: "./assets/public/equipement/bedMade.svg",
     alt: "Icône Draps et linge de toilette"
   },
     {
-      nom: "Serviette fournis ",
+      nom: "Serviettes fournies ",
       image: "./assets/public/equipement/bedding.svg",
       alt: "Icône Draps et linge de toilette"
+    },
+    {
+      nom: "Lave-linge",
+      image:  "./assets/public/equipement/laundrymachine.svg",
+      alt: "Lave-linge"
+    },
+    {
+      nom: "Lave-vaisselle",
+      image:  "./assets/public/equipement/dishwasher.svg",
+      alt: "Lave-vaisselle"
     },
     {
       nom: "Télévision",
@@ -21,13 +31,10 @@ const equipementsItems = [
       alt: "Icône Wifi"
     },
   {
-      nom: "Jeux enfants",
+      nom: "Terrain de  pétanque",
       image: "./assets/public/equipement/balon.svg",
       alt: "Balon"
     }
-
-
-
   ];
   export { equipementsItems };  // Exportation nommée
   export default equipementsItems;  // Exportation par défaut

@@ -1,6 +1,7 @@
 <!-- App.svelte -->
 <script>
   import { link } from "svelte-spa-router";
+  
 </script>
 
 <div class="container-map">
@@ -30,8 +31,8 @@
         <!-- Votre composant Svelte -->
         <iframe
             src="https://www.google.com/maps/d/embed?mid=1f3EkxUy4VLsVmHgcalpX69A2EFahOGA&ehbc=2E312F&noprof=1"
-            width="100%"
-            height="380"
+            width="150%"
+            height="400"
             title="Google map"
         ></iframe>
     </div>

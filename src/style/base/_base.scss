@@ -4,7 +4,7 @@
 @use "../base/normalize";
 
 body {
-
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--primary-light);
@@ -13,7 +13,7 @@ body {
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,32 +33,37 @@ main {
   flex: 1;
 }
 
+/* Base */
 h1,
 h2,
 h3,
 p {
   text-align: center;
-
 }
 
 h1 {
   font-size: 24px; /* Correspond à environ 1.5em */
+  font-weight: 500; /* Poids semi-gras */
 }
 
 h2 {
   font-size: 20px; /* Correspond à environ 1.25em */
+  font-weight: 500; /* Poids semi-gras */
 }
 
 h3 {
   font-size: 16px; /* Correspond à environ 1em */
+  font-weight: 500; /* Poids semi-gras */
 }
 
 p {
   letter-spacing: .06em;
   font-size: 13px; /* Correspond à environ 0.8125em */
+  font-weight: 400; /* Poids normal */
 }
-// Requêtes media pour les tablettes
-@include mixins.tablet {
+
+/* Requêtes media pour les tablettes */
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 22px; /* Correspond à 1.375em */
   }
@@ -76,9 +81,8 @@ p {
   }
 }
 
-
-// Requêtes media pour les écrans de bureau
-@include mixins.desktop {
+/* Requêtes media pour les écrans de bureau */
+@media screen and (min-width: 769px) {
   h1 {
     font-size: 30px; /* Correspond à environ 1.875em */
   }

@@ -103,7 +103,7 @@ import { onMount, tick } from "svelte";
     <a href="/" tabindex={opened ? -1 : 0}>
       <img
         class={`logoHome ${opened ? "hide-logo" : ""}`}
-        src="./assets/logo-mini.png"
+        src="./assets/logo.png"
         alt="Logo de l'association StVincent"
       />
     </a>

@@ -4,7 +4,7 @@ const informations = [
     {
       name:"Étale",
       title: "Gite 3 pièces",
-      description: "Gite de 100m2 rénovée, située au rez-de-chaussée, au-dessus de la maison des propriétaires, sur un terrain de 300m2 comprenant 2 autres gîtes. <br/><br/> Accès commun au logement avec un parking privatif. salon (cheminée décorative)/séjour/cuisine ouverte. <br/><br/> une terrasse privative, soigneusement aménagée avec un salon de jardin, offrant un espace extérieur.",
+      description: "Gîte de 100m² rénové, situé au rez-de-chaussée, au-dessus de la maison des propriétaires, sur un terrain de 3000m² comprenant 2 autres gîtes. <br/><br/> Accès commun au logement avec un parking privatif. Salon (cheminée décorative)/séjour/cuisine ouverte. <br/><br/> Une terrasse privative, soigneusement aménagée avec un salon de jardin, offrant un espace extérieur.",
       roomComposition: [
         "1 lit 160x200",
         "2 lits jumelables 80x200",
@@ -23,12 +23,12 @@ const informations = [
     capacity: 6,
     rooms: 3,
     bathrooms: 1,
-    beds: 5,
+    beds: 4,
     squareMeter: 100,
     svgPaths: [
       { id: 1, path: "./assets/public/guests.svg", title: "Capacity", text: "Hôtes" },
-      { id: 2, path: "./assets/public/shower.svg", title: "Number of rooms", text: "Douche " },
-      { id: 3, path: "./assets/public/bedrooms.svg", title: "Number of bathrooms", text: "Chambre" },
+      { id: 2, path: "./assets/public/shower.svg", title: "Number of rooms", text: "Douche" },
+      { id: 3, path: "./assets/public/bedrooms.svg", title: "Number of bathrooms", text: "Chambres" },
       { id: 4, path: "./assets/public/beds.svg", title: "Number of beds", text: "Lits"},
       { id: 5, path: "./assets/public/area.svg", title: "Surface", text: "m2" }
     ],

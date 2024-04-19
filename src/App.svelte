@@ -15,6 +15,13 @@
   // ! - et importation de { location } de 'svelte-spa-router'
 
   import { beforeUpdate } from "svelte";
+  import { onMount } from 'svelte';
+
+
+// Appeler la fonction scrollToTop lorsque le composant est monté
+onMount(() => {
+  scrollToTop();
+});
 
   beforeUpdate(() => {
     $location === "/"
@@ -34,6 +41,9 @@
   location.subscribe(() => {
     scrollToTop();
   });
+  window.onload = function() {
+    window.scrollTo(0, 0);
+}
 
 </script>
 

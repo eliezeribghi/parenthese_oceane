@@ -48,10 +48,7 @@ import '../style/components/slider.scss'
     <div class="logo-container">
       <img class="logo-slide" src="./assets/logo.png" alt="Logo" loading="lazy" />
     </div>
-     <!-- Conteneur du logo-region -->
-     <div class='logo-region'>
-      <img class="logo-vendee" src="./assets/logo-vendee.png" alt="Logo" loading="lazy" />
-    </div>
+    
   </div>
   
   <!-- Wrapper du carousel -->

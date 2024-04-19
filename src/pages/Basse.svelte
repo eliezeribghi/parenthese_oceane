@@ -12,7 +12,7 @@
  
         const [{ svgPaths }] = myAccommodation;
    
-    const cottage = combinedData.find(item => item.title === "Gîte 1 pièce");
+    const cottage = combinedData.find(item => item.title === "Gîte 2 pièces");
 
 let {name, title, description, roomComposition } = cottage;
    
@@ -175,10 +175,15 @@ let {name, title, description, roomComposition } = cottage;
                 <h2 class="EquipementH2">Équipements inclus</h2>
                 <ul>
                     {#each equipements as equipement (equipement.nom)}
+                   {#if equipement.nom !== "Wifi"}
+                    
+                  
                         <li class="equipement-item">
                             <img src={equipement.image} alt={equipement.alt} />
                             {equipement.nom}
                         </li>
+ {/if}
+
                     {/each}
                 </ul>
             </div>

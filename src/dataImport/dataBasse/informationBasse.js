@@ -1,8 +1,8 @@
 const informations = [
   {
     name: "Marée Basse",
-    title: "Gîte 1 pièce",
-    description: "Gîte rénové, capacité 4 personnes, de 37 m2. Salon, cuisine, 1 chambre (1 lit 160, 1 lit superposé 90), salle d'eau, parking. Terrasse privée, jardin partagé.<br/> <br>  Plage Clemenceau à 1,3 km.<br/> <br>  Commerces estivaux à 250 m. Inclus : chauffage, draps, linge de toilette. Proche forêt, sentiers de randonnées < 2 km.",
+    title: "Gîte 2 pièces",
+    description: "Gîte rénové, d'une capacité d'accueil de 4 personnes, d'une superficie de 37 mètres carrés. <br> <br> Il comprend un salon confortable, une cuisine entièrement équipée, une chambre comprenant un lit double (160 cm) ainsi qu'un lit superposé (90 cm), une salle d'eau moderne et un espace de stationnement dédié. <br> <br> Profitez également d'une terrasse privée pour des moments de détente en plein air, ainsi que d'un jardin partagé où vous pourrez admirer la nature environnante. <br> <br> De plus, des jeux pour enfants sont disponibles pour divertir les plus jeunes et leur assurer un séjour des plus agréables.",
     roomComposition: [
       "1 lit 160x200",
       "1 lit superposé (2 x 90x200)"

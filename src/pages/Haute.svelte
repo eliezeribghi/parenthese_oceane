@@ -1,6 +1,6 @@
 <script>
+    import equipementsItems from "../dataImport/equipments.js";
     import equipmentOutdoorItems from "../dataImport/equipementOutdoor.js";
-    import equipements from "../dataImport/equipments.js";
     import "../style/utils/_mixins.scss";
     import Icon from "../components/Icon.svelte";
     import Carousel from "../components/Carousel.svelte";
@@ -11,6 +11,7 @@
         tarifs,
         combinedData,
     } from "../dataImport/dataHaute/informationDataHaute";
+
     const [{ svgPaths }] = myAccommodation;
 
     const cottage = combinedData.find((item) => item.title === "Gite 2 pièces");
@@ -57,6 +58,9 @@
             }
         }
     }
+
+    // Filtrer les équipements pour exclure celui avec le nom "Wifi"
+    const filteredEquipements = equipementsItems.filter(item => item.nom !== "Wifi");
 </script>
 
 <section
@@ -120,6 +124,7 @@
             on:keydown={handleKeyDown}
             aria-label="Aller à la section Tarifs du gîte">TARIFS</a
         >
+
     </nav>
 
     <section class="IconMobile" role="presentation">
@@ -128,6 +133,7 @@
         {:else}
             <p>Loading...</p>
         {/if}
+
     </section>
 </section>
 
@@ -182,11 +188,13 @@
             <div class="equipements">
                 <h2 class="EquipementH2">Équipements inclus</h2>
                 <ul>
-                    {#each equipements as equipement (equipement.nom)}
+                    {#each equipementsItems as equipement (equipement.nom)}
+                    {#if (equipement.nom !== "Wifi" && equipement.nom !== "Lave-vaisselle" ) }
                         <li class="equipement-item">
                             <img src={equipement.image} alt={equipement.alt} />
                             {equipement.nom}
                         </li>
+{/if}
                     {/each}
                 </ul>
             </div>

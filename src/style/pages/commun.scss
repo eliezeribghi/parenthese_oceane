@@ -192,31 +192,6 @@ ul {
     margin-left: -2em;
 }
 
-/* Animation de l'entrée de l'équipement */
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Animation de l'entrée de l'équipement */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 /* Équipement */
 .equipement {
@@ -258,16 +233,11 @@ ul {
     border: solid 1px $primary;
     display: flex;
     align-items: center;
-    opacity: 0;
-    animation: slideInRight 0.4s ease-in-out forwards;
 
-    &:nth-child(odd) {
-        animation: slideInRight 0.3s ease-in-out 1s forwards;
-    }
 
-    &:nth-child(even) {
-        animation: slideInLeft 0.3s ease-in-out 1s forwards;
-    }
+}
+.outdoor-equipment li.animate {
+  opacity: 1;
 }
 
 /* Icône de l'équipement */
@@ -484,6 +454,12 @@ ul {
 
     /* Styles pour l'équipement extérieur */
     .outdoor-equipment {
-        margin-bottom: 5%;
+        padding: 0 20% 0 20%;
+  
+    
+    }
+    .container-text{
+
+        padding: 0 em 0 3em;
     }
 }
