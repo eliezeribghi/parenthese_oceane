@@ -45,13 +45,14 @@
     margin-top: 18%;
     opacity: 1;
     transform: matrix(1, 0, 0, 1, 10, 1);
-    width: 80%;
+    width: 90%;
     height: 100%;
     padding-right: 10%;
 }
 
 .rental-card {
-    line-height: .9;
+    text-align: left;
+    line-height: 1.1;
     letter-spacing: 1vw;
     color: #000000b6;
     padding: 4%;
@@ -60,7 +61,7 @@
     margin: 1.7em;
     position: relative;
     background-color: rgba(225, 225, 225, 0.426);
-    width: 80%;
+    width: 93%;
     height: auto;
     margin-top: calc(-10% - 5%);
     overflow: hidden;
@@ -94,14 +95,15 @@
         position: relative;
         background-color: rgba(225, 225, 225, 0.5);
         max-width: 30em;
-        margin-top: calc(6% - 15%);
+        margin-top: calc(6% - 19%);
+        margin-left: calc(15% - 1%);
         left: 15%;
         overflow: hidden;
     }
 
     .rental-image {
         padding: 0%;
-        height: 32vh;
+        height: 30vh;
         width: auto;
 
     }
@@ -161,7 +163,7 @@
     }
 
     .rental-card {
-        margin-top: calc(1em - 15%);
+        margin-top: calc(-.9em - 13%);
         text-align: start;
         letter-spacing: 0;
         color: #000000b6;
@@ -169,7 +171,7 @@
         width: 88%;
         height: auto;
         left: 2.7em;
-
+        margin-left: calc(8% - 1%);
     }
 
     .textCardH2 {
