@@ -291,6 +291,13 @@ ul {
 
 
 @include mixins.tablet {
+    .carouselDesktop{
+        display: none;
+    }
+    .IconMobile {
+        display:y;
+    }
+
 
     /* Styles de la navigation dans la section de la page du cottage */
     .sectionPageCottage nav {
