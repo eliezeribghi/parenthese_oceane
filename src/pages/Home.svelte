@@ -19,9 +19,7 @@
   });
 </script>
 
-<section>
   <Slider />
-</section>
 
 <section class="cards">
 

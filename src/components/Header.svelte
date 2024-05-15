@@ -71,7 +71,7 @@ import { onMount, tick } from "svelte";
 <section class="menuWrapper" role="navigation" aria-label="Main navigation">
   <div class="menuHeader">
     <div
-      class="menu-toggle"
+      class={`menu-toggle ${opened ? 'opened' : ''}`}
       tabindex="0"
       on:click={handleMenuClick}
       on:keydown={handleKeyDown}

@@ -18,7 +18,7 @@
         currentIndex = (currentIndex + 1) % images.length;
         imageUrl1 = images[currentIndex].src;
         imageUrl2 = images[(currentIndex + 1) % images.length].src;
-    }, 3000);
+    }, 1000);
 
     // Fonction exécutée après le rendu initial du composant
     onMount(() => {

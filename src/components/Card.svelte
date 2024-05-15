@@ -21,7 +21,7 @@
 
                     <p class="textCard">{location}</p>
                     <p class="textCard">{details}</p>
-                    <a class="textCard linkCard" href={link} on:click|preventDefault={() => redirectToLink(link)}>En savoir plus sur {name}</a>
+                    <a class="textCard linkCard" href={link} on:click|preventDefault={() => redirectToLink(link)}>En savoir plus </a>
 
                 </div>
             </div>

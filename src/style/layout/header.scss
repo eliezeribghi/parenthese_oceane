@@ -2,13 +2,26 @@
 @use "../utils/mixins";
 
 .menu-toggle {
-  align-self: end;
   position: relative;
   display: flex;
+  margin-inline-end: $heightModal;
   z-index: 1;
-  margin-top: 1.9em;
-  right: 1em;
   transform: scale(1.3);
+
+  button{
+    span, span::before, span::after{
+      background-color: $primary!important;
+    }
+  }
+
+  &.opened{
+    top: calc($heightModal + 10px);
+    align-self: flex-start;
+
+    span{
+      background-color: transparent!important;
+    }
+  }
 }
 
 .menuWrapper {
@@ -18,24 +31,41 @@
 }
 
 .menuHeader {
-  left: 0%;
-  margin: 0%;
-  padding: 1%;
-  z-index: 99;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: auto;
-  background-color: $primary-light;
+  left: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: row-reverse;
+  padding-block-start: $heightModal;
+  margin: 0;
+  width: 100vw;
+  height: auto;
+  background-color: #fff;
+  z-index: 99;
+
+  a{
+    position: relative;
+    margin-right: auto;
+    margin-block: 10px;
+    .logoHome{
+      // position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 5em;
+      // height: 2em;
+      object-fit: cover;
+    }
+  }
 }
 
 
 .menuHeader ul {
   list-style-type: none;
-  padding-bottom: 3rem;
+  padding-block: calc($heightModal * 2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,26 +92,14 @@
   text-decoration: none;
 }
 
-.logoHome {
-  position: absolute;
-  top: 3em;
-  left: 8%;
-  height: auto;
-  width: 2em;
-  transform: scale(2.1);
-}
 
 @include mixins.tablet {
-  .menuHeader {
-    padding: 2%;
-  }
 
-  .logoHome {
-    top: 4em;
-    transform: scale(3);
-    left: 3em;
-
-  }
+  // .logoHome {
+  //   top: 4em;
+  //   transform: scale(3);
+  //   left: 3em;
+  // }
 }
 
 @include mixins.desktop {
@@ -89,21 +107,9 @@
     display: none;
   }
 
-  .logoHome {
-    top: 3.5em;
-    transform: scale(2.7);
-    left: 3em;
-
-  }
-
   .menuHeader {
-
-
-    padding: 2.5em;
     z-index: 99;
-    display: flex;
     justify-content: flex-end;
-    flex-direction: row;
   }
 
   .menuHeader ul {

@@ -28,6 +28,7 @@
 }
 
 .main-content p {
+
   font-size: 1.3em;
   line-height: 1.6;
 }
@@ -151,6 +152,7 @@
   font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 2em;
+
 }
 
 .linkPlace {
@@ -224,7 +226,10 @@
   background-color: rgba(0, 0, 0, 0.325);
   animation: fadeIn 0.5s;
 }
+.modalLieu h2 {
+font-weight: bold;
 
+}
 .modalContent {
   background-color: #fefefe;
   margin: 20vh auto;
@@ -234,6 +239,7 @@
   height: auto;
   border-radius: 1em;
   padding: 4em;
+  min-width: 30%;
 }
 
 .modalContent img {
@@ -244,9 +250,15 @@
   width: 17vh;
   height: 17vh;
   object-fit: cover;
-  margin-left: 2em;
+box-shadow: 0 1px 9px $primary;
 
+border: 1px solid #ddd;
+border-radius: 4px;
+padding: 5px;
+width: 150px;
 }
+
+
 
 .modalContent h2 {
   margin-top: 1.5em;
@@ -256,9 +268,11 @@
 }
 
 .modalContent h3 {
+  font-style: normal;
+
   color: $primary;
   margin: 5% 0 5% 0;
-  font-size: 1.3em;
+
 
 }
 
@@ -281,12 +295,14 @@
   color: #636363;
   transition: background-color 0.3s, color 0.3s;
 }
+.modalLieu a {
 
+  font-weight: bold;
+}
 .close-button {
   position: relative;
-  top: -70px;
-  right: -50px;
-  padding: 10px;
+
+
   cursor: pointer;
   color: #aaa;
   float: right;
@@ -307,6 +323,8 @@
 
  margin-bottom: 3em;
 }
+
+
 @include mixins.tablet {
   .tourist-site {
     flex-direction: row;
@@ -384,6 +402,7 @@ height: 15vh;
 
   .tourist-site {
     flex-direction: row;
+    min-width: 700px;
   }
 
   .tourist-site:nth-child(even) {
@@ -395,14 +414,14 @@ height: 15vh;
   }
 
   .modalLieu {
-  
  
-  
-   
 padding: 0  30% 0% 30%;
 
   }
+  .modalContent{
+   min-width: 70vh;
 
+  }
 
 
   .modalContent h3 {

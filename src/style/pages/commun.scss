@@ -291,11 +291,9 @@ ul {
 
 
 @include mixins.tablet {
-    .carouselDesktop{
-        display: none;
-    }
+  
     .IconMobile {
-        display:y;
+        display:none;
     }
 
 

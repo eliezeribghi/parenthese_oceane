@@ -3,22 +3,20 @@
 
 
 .modal-overlay {
-
     display: flex;
     z-index: 101;
     position:fixed;
     top: 0;
     left: 0;
     width: 100%;
-   
-  
+    height: $heightModal;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
 }
 
 .modal {
-       padding: .1em; 
+    padding: .1em; 
     background-color: $primary;
     width: 100%;
     height: auto;
@@ -26,9 +24,7 @@
 }
 
 .close-button-modal {
-   
     transform: scale(1);
-
     cursor: pointer;
     position: absolute;
     right: 1.2em;

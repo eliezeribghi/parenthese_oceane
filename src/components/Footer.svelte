@@ -33,13 +33,13 @@
           >
             StVincentsurJard</a>
 
-          <a
+          <a title=" Charte de Confidentialité"
             href="/privacyPolicy"
             use:link
             aria-label="Charte de Confidentialité"
             tabindex="0"
           >
-            Charte de Confidentialité</a
+          Confidentialité</a
           >
           <a
             href="/Agreement"

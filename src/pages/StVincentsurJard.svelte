@@ -249,18 +249,18 @@ window.addEventListener("scroll", () => {
         title={modalContent.name}
       />
        <h2>{modalContent.title}</h2>
-      <h3>Description</h3>
+      <h3> <strong>Description</strong></h3>
       <p>{modalContent.description}</p>
-      <h3>Intérêt touristique</h3>
+      <h3><strong>Intérêt touristique</strong></h3>
       <p>{modalContent.interest}</p>
-      <h3>Informations pratiques</h3>
+      <h3><strong>Informations pratiques</strong></h3>
       <p>{modalContent.practicalInfo}</p>
-      <h3>Lien vers site</h3>
+      <h3><strong> Lien vers site</strong></h3>
       <a
         href={modalContent.url}
         on:click|preventDefault={() => confirmRedirect(modalContent.url, modalContent.name)}
       >
-        Cliquez ici pour en savoir plus
+       En savoir plus
       </a>
     </div>
   </div>
