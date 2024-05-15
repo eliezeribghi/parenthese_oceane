@@ -102,14 +102,16 @@ import { onMount, tick } from "svelte";
 
 
    <a href="/" tabindex={opened ? -1 : 0}>
-  <img
-    class={`logoHome ${opened ? "hide-logo" : ""}`}
+    <img
+    class={`logoHome ${opened && window.innerWidth < 1025 ? "hide-logo" : ""}`}
     src="./assets/logo.png"
-    alt="Logo de l'association StVincent"
+    alt="Logo de l'association Parenthése Océane"
   />
+  
+  
 </a>
 
-    
+
     <Button />
   </div>
 </section>

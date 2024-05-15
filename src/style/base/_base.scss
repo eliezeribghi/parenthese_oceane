@@ -64,6 +64,7 @@ p {
 
 /* Requêtes media pour les tablettes */
 @media screen and (max-width: 768px) {
+  $rond-size: 400vh;
   h1 {
     font-size: 22px; /* Correspond à 1.375em */
   }
