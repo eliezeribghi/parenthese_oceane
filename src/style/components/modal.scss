@@ -1,6 +1,11 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
+.modal-content{
+    p{
+        font-size: 16px;
+    }
+}
 
 .modal-overlay {
     display: flex;

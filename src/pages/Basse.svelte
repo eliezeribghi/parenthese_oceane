@@ -121,78 +121,88 @@ let {name, title, description, roomComposition } = cottage;
         >
     </nav>
 
-    <section class="IconMobile" role="presentation">
-        <Icon  { myAccommodation } aria-hidden="true" />
-    </section>
+  
 </section>
 
 <!-- Les autres sections sont également adaptées de manière similaire -->
 
 <section
-    id="cottageDescription"
+   
     class="sectionMain"
     aria-labelledby="cottageDescHeading"
 >
-<div>
-    <h1 class="descriptionTitle" id="cottageDescHeading">
-        {title}
-    </h1>
-
-</div>
     <div class="description">
-        <section class="carouselDesktop">
-            <Carousel {images} />
-        </section>
         <div class="squareDescription">
             <h1 class="descriptionTitleMobile" id="cottageDescHeading">
                 {title}
             </h1>
-            <section class="iconDesktop" role="presentation">
-                <Icon { myAccommodation }/>
+
+            <section class="carouselDesktop">
+                <Carousel {images} />
             </section>
 
-            <p class="container-text">
-                {@html description}
-            </p>
+            <section  id="cottageDescription" class="iconDesktop" role="presentation">
+                <Icon {myAccommodation} />
 
-            <br />
-            <div
-                class="room-composition"
-                aria-labelledby="roomCompositionHeading"
-            >
-                <h2 class="roomH2" id="roomCompositionHeading">
-                    Composition des chambres
-                </h2>
+                <p  class="container-text desktopText">
+                    <!-- DESKTOP -->
+                    {@html description}
+                </p>
+            </section>
 
-                {#each roomComposition as room (room)}
-                    <div class="chambre">
-                        <p>{room}</p>
+            <div class="wrapperSection" >  
+                <h2 class="mobilText"> {name} </h2> 
+                <p class="container-text mobilText">
+             
+                    {@html description}
+                </p>
+<span id="equipmentOutdoor"  ></span>
+                <section    class="equipements-section">
+                    <div class="equipements">
+                        <h2 class="equipementH2">Équipements inclus</h2>
+                        <ul>
+                            {#each equipements as equipement (equipement.nom)}
+                                <li class="equipement-item">
+                                    <img
+                                        class="equipements-img"
+                                        src={equipement.image}
+                                        alt={equipement.alt}
+                                    />
+                                    <span>{equipement.nom}</span>
+                                </li>
+                            {/each}
+                        </ul>
                     </div>
-                {/each}
-            </div>
+                </section>
 
-            <div class="equipements">
-                <h2 class="EquipementH2">Équipements inclus</h2>
-                <ul>
-                    {#each equipements as equipement (equipement.nom)}
-                   {#if equipement.nom !== "Wifi"}
-                    
-                  
-                        <li class="equipement-item">
-                            <img src={equipement.image} alt={equipement.alt} />
-                            {equipement.nom}
-                        </li>
- {/if}
+                <section id="roomCompositionHeading"   class="Compositions-section">
+                    <div
+                        class="room-composition"
+                        aria-labelledby="roomCompositionHeading"
+                    >
+                        <h2 class="roomH2">
+                            Composition des chambres
+                        </h2>
 
-                    {/each}
-                </ul>
+                        <ul class="chambre">
+                            {#each roomComposition as room}
+                                <li>
+                                    {#if room.match(/\(([^)]+)\)/)}
+                                        {@html room.replace(/\(([^)]+)\)/, '<span class="bed-size">($1)</span>')}
+                                    {:else}
+                                        {room}
+                                    {/if}
+                                </li>
+                            {/each}
+                        </ul>
+                        
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 </section>
-<section class="carouselMobile">
-    <Carousel {images} />
-</section>
+
 <section
     id="equipmentOutdoor"
     class="equipment"
@@ -217,26 +227,28 @@ let {name, title, description, roomComposition } = cottage;
             <li aria-label="Animaux gratuits">Animaux gratuits</li>
             <li aria-label="Linge de maison fourni">Linge de maison fourni</li>
             <li aria-label="Lits faits à l'arrivée">Lits faits à l'arrivée</li>
-            <li aria-label="Ménage fin de séjour en option*">Ménage fin de séjour en option*</li>
+            <li aria-label="Ménage fin de séjour en option*">
+                Ménage fin de séjour en option*
+            </li>
         </ul>
     </div>
 </section>
 
+
 <section id="tarif" class="rates" aria-labelledby="tarifHeading">
     <h2 class="ratesTitle" id="tarifHeading">Tarifs</h2>
     <div class="tariffDetails">
-      {#each tarifs as { label, amount, isBold, additionalInfo }, key (key)}
-        <p class="tariffItem" key={key}>
-          {#if isBold}
-            {label} <span class="tariffAmount">{amount}</span>
-          {:else}
-            {label}
-          {/if}
-          {#if additionalInfo}
-            <span class="additionalInfo">{additionalInfo}</span>
-          {/if}
-        </p>
-      {/each}
+        {#each tarifs as { label, amount, isBold, additionalInfo }, key (key)}
+            <p class="tariffItem" {key}>
+                {#if isBold}
+                    {label} <span class="tariffAmount">{amount}</span>
+                {:else}
+                    {label}
+                {/if}
+                {#if additionalInfo}
+                    <span class="additionalInfo">{additionalInfo}</span>
+                {/if}
+            </p>
+        {/each}
     </div>
-  </section>
-  
+</section>

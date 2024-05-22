@@ -2,12 +2,12 @@
 @use "../utils/mixins";
 
 .from-section {
-
   position: relative;
   width: 100vw;
   height: auto;
-  padding: 25% 10% 15% 10%;
-
+  max-width: 40em;
+  padding-inline: 5vw;
+  padding-block-start: $heightNav;
 }
 
 .section-logo {
@@ -44,14 +44,19 @@
 }
 
 .requis {
-  margin-left: 2%;
+  margin-left: .5rem;
   color: rgba(0, 0, 0, 0.243);
+  font-size: small;
 }
 
 .selectName {
   display: flex;
   flex-direction: row;
   column-gap: 1em;
+
+  .form-group{
+    flex: 1;
+  }
 }
 
 .form-label {
@@ -84,7 +89,6 @@ label {
 .common-input {
   display: block;
   width: 100%;
-
   padding: .3rem;
   margin-bottom: 10px;
   border: 1px solid #1e55b349;
@@ -92,7 +96,8 @@ label {
 }
 
 .submit-button {
-  padding: 3% 15% 3% 15%;
+  // padding: 3% 15% 3% 15%
+  padding: .5em 2em;
   border: none;
   background-color: $primary;
   color: $primary-light;
@@ -115,6 +120,7 @@ label {
 
 .consent-checkbox label {
   padding: 1em;
+  font-size: .6rem;
 }
 
 .consent-text {
@@ -126,7 +132,7 @@ label {
 
   .from-section {
     margin: 1%;
-    padding: 5% 10% 10% 10%;
+    // padding: 5% 10% 10% 10%;
   }
 
 
@@ -151,8 +157,7 @@ label {
 
   .from-section {
     margin: 3%;
-    padding: 3% 35% 10% 35%;
-    max-width: 300em;
+    // padding: 3% 35% 10% 35%;
     margin-left: auto;
     /* Pour centrer l'élément horizontalement */
     margin-right: auto;

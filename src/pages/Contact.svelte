@@ -191,7 +191,7 @@ const handleSubmit = async () => {
 
 <div class="consent-checkbox">
   <input type="checkbox" id="consent" bind:checked={formData.consent} required>
-  <label for="consent"><span class="requis">(requis)</span> <br>**Je consens au traitement de mes données personnelles. </label>
+  <label for="consent"><span class="requis">(requis)</span> <br>Je consens au traitement de mes données personnelles.** </label>
 </div>
 
 

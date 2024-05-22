@@ -14,8 +14,7 @@
   // ! - À décommenter après installation de 'spa-svelte-router'
   // ! - et importation de { location } de 'svelte-spa-router'
 
-  import { beforeUpdate } from "svelte";
-  import { onMount } from 'svelte';
+  import { beforeUpdate, onMount } from "svelte";
 
 
 // Appeler la fonction scrollToTop lorsque le composant est monté

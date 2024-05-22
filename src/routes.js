@@ -8,6 +8,8 @@ import Contact from './pages/Contact.svelte';
 import StVincentsurJard from "./pages/StVincentsurJard.svelte";
 import Agreement from "./pages/Agreement.svelte";
 import PrivacyPolicy from "./pages/PrivacyPolicy.svelte";
+
+
 export default {
     "/": Home,
     "/haute": Haute,
@@ -19,5 +21,4 @@ export default {
     "/agreement": Agreement,
     "/privacyPolicy": PrivacyPolicy,
     "*": NotFound,
-
 };

@@ -6,9 +6,9 @@ const informations = [
       title: "Gite 3 pièces",
       description: "Gîte de 100m² rénové, situé au rez-de-chaussée, au-dessus de la maison des propriétaires, sur un terrain de 3000m² comprenant 2 autres gîtes. <br/><br/> Accès commun au logement avec un parking privatif. Salon (cheminée décorative)/séjour/cuisine ouverte. <br/><br/> Une terrasse privative, soigneusement aménagée avec un salon de jardin, offrant un espace extérieur.",
       roomComposition: [
-        "1 lit 160x200",
-        "2 lits jumelables 80x200",
-        "1 lit 180x200",
+        "1 lit (160x200)",
+        "2 lits jumelables (80x200)",
+        "1 lit (180x200)",
       ],
       tarifs: [
         { label: "À partir de", amount: "101,67 €", isBold: true },

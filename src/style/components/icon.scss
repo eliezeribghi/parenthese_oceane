@@ -2,9 +2,8 @@
 @use "../utils/mixins";
 
 .sectionIcon {
-    margin-top: 10%;
-
-
+    max-width: calc(100% - 3vw);
+    margin-inline: auto;
 }
 
 .icon-section {
@@ -31,7 +30,7 @@
 
 .icon-wrapper .textIcon {
     margin-top: 1em;
-    font-size: 0.5rem;
+    font-size: .75rem;
     text-align: justify;
 }
 
@@ -40,16 +39,18 @@
      
     }
 
-    .icon-section {
-        margin: 10%;
-    }
     .icon-wrapper .icons {
-        width: 3em;
         height: auto;
     }
+
+.icon-wrapper .textIcon {
+   
+    font-size: .60rem;
+   
+}
     .numberIcon {
         font-weight: bold;
-        font-size: 1.5em;
+        font-size: 1.3em;
         letter-spacing: 1px;
         padding: .4em;
         color: $primary;

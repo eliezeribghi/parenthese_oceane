@@ -13,7 +13,7 @@ $carouselStart: 65px;
   align-items: center;
   width: 100vw;
   height: calc(100% - $carouselStart);
-  padding-block-start:$carouselStart;
+  padding-block-start: $heightNav;
   overflow: hidden;
   z-index: -1;
 
@@ -118,7 +118,7 @@ $carouselStart: 65px;
 
       h1{
         letter-spacing: 4px;
-        font-size: 4em;
+        font-size: 3em;
       }
         /* Ajustement du style du logo pour les écrans plus larges */
 
