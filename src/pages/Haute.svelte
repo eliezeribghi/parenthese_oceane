@@ -127,6 +127,8 @@
 
     </nav>
 
+ 
+</section>
 
 <!-- Les autres sections sont également adaptées de manière similaire -->
 
