@@ -127,15 +127,6 @@
 
     </nav>
 
-    <section class="IconMobile" role="presentation">
-        {#if myAccommodation[0]}
-            <Icon {myAccommodation} aria-hidden="true" />
-        {:else}
-            <p>Loading...</p>
-        {/if}
-
-    </section>
-</section>
 
 <!-- Les autres sections sont également adaptées de manière similaire -->
 
