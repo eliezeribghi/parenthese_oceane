@@ -3,6 +3,8 @@
 
 
 .container-map {
+   
+   
     margin-top: 10em;
     line-height: 1.6;
     display: flex;
@@ -10,6 +12,24 @@
     align-items: center;
 
 }
+summary::after {
+  
+    float:inline-end;
+    margin-left: 1em;
+    
+}
+
+details[open] summary::before {
+    content: '';
+}
+details > * {
+    transition: opacity 0.2s ease;
+}
+.instructions, iframe {
+    min-width: 40%;
+    min-height: 40%;
+}
+
 
 .container-map  h1{
 
@@ -24,9 +44,14 @@ font-weight: bold;
 
     text-align: center;
 }
+iframe {
+    width: 80%; 
+    height: 450px; 
+    flex-shrink: 0; 
+}
 
 .custom-main {
-    
+  
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -37,14 +62,17 @@ font-weight: bold;
 .instructions {
     color: #1e55b3;
     text-align: center;
-    margin: 3.4rem;
+
 }
 
 .text_footer p {
 
     padding-bottom: 2em;
 }
+.instructions li {
 
+    margin: 2em;
+}
 .instructions h2 {
     padding: 1em;
 
@@ -61,16 +89,28 @@ text-decoration: none;
 }
 
 /* Styles responsives */
-@media screen and (min-width: 48em) {
+@include mixins.desktop {
+    iframe {
+        width: 50%; 
+        height: 500px; 
+        flex-shrink: 0; 
+    }
     .container-map {
-   
+  
         margin-top: 10em;
         height: auto;
     }
     .custom-main{
-
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+     
+        align-content: space-around;
+        justify-content: space-around;
      width: 100%;
-
+     max-width: 100em;
+ height: 53vh;
     }
     .custom-header {
         padding: 1rem;
@@ -80,19 +120,10 @@ text-decoration: none;
         text-align: center;
     }
 
-    .custom-main {
-        flex-direction: row;
-        justify-content: space-between;
 
-    }
-
-    .custom-main {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
     .instructions {
-        flex-basis: 100vh;
+   
         padding-right: 4rem;
         margin-bottom: 5em;
     }

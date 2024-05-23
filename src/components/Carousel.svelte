@@ -1,48 +1,86 @@
 <script>
     import { onMount, onDestroy } from "svelte";
 
-    export let images;
+    export let images = [];
 
     let currentIndex = 0;
-    let imageUrl1 = images[currentIndex].src;
-
-
+    let imageUrl = images[currentIndex].src;
+    let altText = images[currentIndex].alt;
+    let titleText = images[currentIndex].title;
     let showButtons = false;
+    let scrollContainer;
 
+    // Intervalle pour faire défiler les images automatiquement toutes les 5 secondes
     const interval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        imageUrl1 = images[currentIndex].src;
-      
+        nextImage();
     }, 5000);
 
+    // Initialisation des événements et de l'intervalle
     onMount(() => {
-        return () => clearInterval(interval);
+        document.addEventListener('keydown', handleKeydown); // Ajoute l'écouteur pour les événements de clavier
+        return () => {
+            clearInterval(interval); // Nettoie l'intervalle lorsqu'on quitte le composant
+            document.removeEventListener('keydown', handleKeydown); // Enlève l'écouteur des événements de clavier
+        };
     });
 
     onDestroy(() => {
-        clearInterval(interval);
+        clearInterval(interval); // Nettoie l'intervalle lorsqu'on détruit le composant
+        document.removeEventListener('keydown', handleKeydown); // Enlève l'écouteur des événements de clavier
     });
 
-    function toggleButtons(value) {
-        showButtons = value;
+    // Fonction pour mettre à jour l'image affichée
+    function updateImage() {
+        imageUrl = images[currentIndex].src;
+        altText = images[currentIndex].alt;
+        titleText = images[currentIndex].title;
     }
 
+    // Passe à l'image suivante
     function nextImage() {
         currentIndex = (currentIndex + 1) % images.length;
-        imageUrl1 = images[currentIndex].src;
-        
+        updateImage();
     }
 
+    // Passe à l'image précédente
     function prevImage() {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
-        imageUrl1 = images[currentIndex].src;
-      
+        updateImage();
+    }
+
+    // Gère le défilement avec la souris
+    function onScroll() {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const imageWidth = scrollContainer.scrollWidth / images.length;
+        currentIndex = Math.round(scrollLeft / imageWidth);
+        updateImage();
+    }
+
+    // Passe à une image spécifique
+    function goToImage(index) {
+        currentIndex = index;
+        scrollContainer.scrollLeft = index * (scrollContainer.scrollWidth / images.length);
+        updateImage();
+    }
+
+    // Gère les événements de clavier
+    function handleKeydown(event) {
+        if (event.key === 'ArrowRight') {
+            nextImage();
+        } else if (event.key === 'ArrowLeft') {
+            prevImage();
+        }
+    }
+
+    // Gère le survol pour afficher ou masquer les boutons de navigation
+    function toggleButtons(value) {
+        showButtons = value;
     }
 </script>
 
 <section class="miniCarousel">
     <div
-        class="carousel"
+        class="carouselContenair"
         role="button"
         aria-label="Carousel"
         aria-roledescription="Carousel avec deux images"
@@ -51,28 +89,88 @@
         on:mouseenter={() => toggleButtons(true)}
         on:mouseleave={() => toggleButtons(false)}
     >
-        <div class="image-container" >
-                <button
-                    class={`prev-button ${showButtons ? 'active' : ''}`}
-                    on:click={() => prevImage()}
-                    aria-label="Image Précédente"
-                >
-                </button>
-            <img
-            class="imageMiniCarousel"
-            src={imageUrl1}
-            alt="Description de l'image"
-            aria-label="Première Image"
-            title="Titre de l'image"
-        />
-        
-
-                <button
-                    class={`next-button ${showButtons ? 'active' : ''}`}
-                    on:click={() => nextImage()}
-                    aria-label="Image Suivante"
-                >
-                </button>
+        <div class="image-container" bind:this={scrollContainer} on:scroll={onScroll}>
+            {#each images as image, index}
+                <img
+                    class="imageMiniCarousel"
+                    src={image.src}
+                    alt={image.alt}
+                    aria-label="Première Image"
+                    title={image.title}
+                    style="display: {currentIndex === index ? 'block' : 'none'};"
+                />
+            {/each}
+        </div>
+        <button
+            class={`prev-button ${showButtons ? 'active' : ''}`}
+            on:click={prevImage}
+            aria-label="Image Précédente"
+        >
+        </button>
+        <button
+            class={`next-button ${showButtons ? 'active' : ''}`}
+            on:click={nextImage}
+            aria-label="Image Suivante"
+        >
+        </button>
+        <div class="indicators">
+            {#each images as _, index}
+                <span
+                    class="indicator {currentIndex === index ? 'active' : ''}"
+                    on:click={() => goToImage(index)}
+                ></span>
+            {/each}
         </div>
     </div>
 </section>
+
+<style>
+    .miniCarousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .image-container {
+        position: relative;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .imageMiniCarousel {
+        max-width: 100%;
+        height: auto;
+        scroll-snap-align: center;
+        flex: none;
+    }
+
+  
+
+  
+
+  
+
+    .indicators {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: gray;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .indicator.active {
+        background-color: white;
+    }
+</style>

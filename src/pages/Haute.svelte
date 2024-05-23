@@ -149,7 +149,7 @@
 
             <section  id="cottageDescription" class="iconDesktop" role="presentation">
                 <Icon {myAccommodation} />
-
+                <h2 class="title_texte desktopText"> {name} </h2> 
                 <p  class="container-text desktopText">
                     <!-- DESKTOP -->
                     {@html description}
