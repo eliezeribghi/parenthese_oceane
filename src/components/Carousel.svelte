@@ -80,7 +80,7 @@
 
 <section class="miniCarousel">
     <div
-        class="carouselContenair"
+        class="carousel"
         role="button"
         aria-label="Carousel"
         aria-roledescription="Carousel avec deux images"
@@ -124,53 +124,3 @@
     </div>
 </section>
 
-<style>
-    .miniCarousel {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-
-    .image-container {
-        position: relative;
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-    }
-
-    .imageMiniCarousel {
-        max-width: 100%;
-        height: auto;
-        scroll-snap-align: center;
-        flex: none;
-    }
-
-  
-
-  
-
-  
-
-    .indicators {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-    }
-
-    .indicator {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: gray;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .indicator.active {
-        background-color: white;
-    }
-</style>

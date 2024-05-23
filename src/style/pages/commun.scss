@@ -540,7 +540,7 @@ ul {
         }
     }
     .iconDesktop h2{
-        margin-top: 2em;
+        margin-top: 2.5em;
         color: $primary;
         font-weight: 600;
 
@@ -555,7 +555,11 @@ ul {
             margin: 0;
             // background-color: rgb(243, 243, 243);
             width: 100%;
-            gap: 2em;
+            // gap: 2em;
+
+            .equipements-section{
+                margin-right: 2em;
+            }
         }
 
         .Compositions-section, 
