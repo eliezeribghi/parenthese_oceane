@@ -35,6 +35,17 @@
 .containerHeader {
     height: 92vh;
     position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0000000c;
+        z-index: 1;
+    }
 }
 
 /* Texte dans l'en-tête */
@@ -46,6 +57,7 @@
     color: $primary-light;
     font-size: 4em;
     margin-top: 0;
+    z-index: 10;
 }
 
 /* Image dans l'en-tête */
@@ -330,6 +342,7 @@
     text-decoration: none;
     padding: 1em 2em;
     border-radius: 3px;
+    font-weight: 500;
     transition-property: color, background-color;
     transition-timing-function: ease;
     transition-duration: 200ms;

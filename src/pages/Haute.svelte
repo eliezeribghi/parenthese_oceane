@@ -72,7 +72,7 @@
         <div class="containerHeader">
             <img
                 class="imgHeader"
-                src="./assets/ImgHaute/haute.webp"
+                src="./assets/imgHaute/haute12.webp"
                 alt=""
             />
             <div class="texteImgHeader">{name}</div>

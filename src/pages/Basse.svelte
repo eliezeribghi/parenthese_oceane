@@ -69,7 +69,7 @@ let {name, title, description, roomComposition } = cottage;
 >
     <header>
         <div  class="containerHeader">
-        <img class="imgHeader" src="./assets/ImgBasse/basse1.png" alt="" />
+        <img class="imgHeader" src="./assets/imgBasse/basse1.png" alt="" />
        <div class="texteImgHeader"> {name}</div>
         </div>
     </header>

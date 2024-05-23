@@ -62,7 +62,7 @@
 <section class="sectionPageCottage" aria-labelledby="cottageHeading">
     <header>
         <div class="containerHeader">
-            <img class="imgHeader" src="./assets/ImgEtale/etale1.png" alt="" />
+            <img class="imgHeader" src="./assets/imgEtale/etale1.png" alt="" />
             <div class="texteImgHeader">{name}</div>
         </div>
     </header>

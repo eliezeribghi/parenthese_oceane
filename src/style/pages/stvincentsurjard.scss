@@ -29,7 +29,7 @@
 
 .main-content p {
 
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
@@ -246,16 +246,13 @@ font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  width: 17vh;
-  height: 17vh;
+  margin: 40px auto;
   object-fit: cover;
 box-shadow: 0 1px 9px $primary;
 
-border: 1px solid #ddd;
-border-radius: 4px;
+
 padding: 5px;
-width: 150px;
+width: 350px;
 }
 
 
@@ -342,9 +339,7 @@ width: 150px;
     margin-top: 0;
   }
   .modalContent img {
-  
-    width: 15vh;
-height: 15vh;
+ 
   }
   .modalContent p {
     margin: 0 10vh 0 10vh;
@@ -364,7 +359,7 @@ height: 15vh;
     display: block;
     min-width: 1700px;
     margin: 5em 5em 0em 5em;
-    font-size: 18px;
+    font-size: 1em;
     line-height: 1.6;
     padding-bottom: 5%;
     border-bottom: 0.5px solid $primary;
@@ -430,7 +425,7 @@ padding: 0  30% 0% 30%;
   }
 
   .modalContent p {
-    margin: 0 10vh 0 10vh;
+    margin: 0 10vw 0 10vw;
   }
   .modalContent img {
 

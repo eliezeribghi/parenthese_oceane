@@ -41,7 +41,7 @@
         
   <iframe class="map"
             src="https://www.google.com/maps/d/embed?mid=1f3EkxUy4VLsVmHgcalpX69A2EFahOGA&ehbc=2E312F&noprof=1"
-            width="80%"
+            width=":::;800"
             
             height="400"
             title="Google map"
