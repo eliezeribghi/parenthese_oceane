@@ -120,7 +120,8 @@
     flex-flow: column nowrap;
     gap: 2rem;
     margin-block-end: 2em;
-    margin-inline: 2em;
+    margin-inline: auto;
+    padding-inline: 2em;
     // border: solid $primary 16px;
     // padding: 10%;
 
@@ -131,7 +132,9 @@
     .wrapperSection{
         display: flex;
         flex-direction: column;
-        border: solid $primary 16px;
+        // justify-content: center;
+        // align-items: center;
+        border: solid $primary min(calc(1px + 2vw), 16px);
         padding: 2em;
         margin-inline: 5vw;
         // width: 100%;
@@ -270,7 +273,11 @@
     .carouselDesktop{
         position: relative;
        max-width: 100%;
-    //    width: calc(100% - 2em);
+       height: fit-content;
+       margin-block: auto;
+       margin-inline: auto;
+       width: calc(100% - 10vw);
+       max-width: 700px;
     }
 
     .descriptionTitleMobile{
@@ -570,7 +577,7 @@ ul {
                 margin-inline: auto;
                 padding-inline: 2em;
                 // background-color: rgb(243, 243, 243);
-                background-color:#1e55b31f;
+                background-color:#cddfff1f;
                 border-radius: 3px;
                 width: 100%;
                 padding: 1em;

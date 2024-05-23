@@ -4,7 +4,7 @@ const informations = [
     title: "Gîte 2 pièces",
     description: "Gîte rénové, d'une capacité d'accueil de 4 personnes, d'une superficie de 37 mètres carrés. <br> <br> Il comprend un salon confortable, une cuisine entièrement équipée, une chambre comprenant un lit double (160 cm) ainsi qu'un lit superposé (90 cm), une salle d'eau moderne et un espace de stationnement dédié. <br> <br> Profitez également d'une terrasse privée pour des moments de détente en plein air, ainsi que d'un jardin partagé où vous pourrez admirer la nature environnante. <br> <br> De plus, des jeux pour enfants sont disponibles pour divertir les plus jeunes et leur assurer un séjour des plus agréables.",
     roomComposition: [
-      "1 lit 160x200",
+      "1 lit (160x200)",
       "1 lit superposé (2 x 90x200)"
     ],
     tarifs: [

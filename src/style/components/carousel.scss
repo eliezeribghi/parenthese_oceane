@@ -3,13 +3,13 @@
 
 .imageMiniCarousel {
     width: 100%;
-    object-fit: cover;
+
     scroll-snap-align: center;
     flex: none;
 }
 
 .miniCraousel {
-    position: relative;
+ position: relative;
 
     width: 100%;
 }
@@ -86,6 +86,7 @@
 }
 
 .imageMiniCarousel {
+   
     max-height: 380px;
 }
 
