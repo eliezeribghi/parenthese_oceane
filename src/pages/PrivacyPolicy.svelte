@@ -8,7 +8,7 @@
         { section: 'Protection de Vos Informations Personnelles', description: 'Nous prenons des mesures de sécurité appropriées pour protéger vos informations personnelles contre tout accès non autorisé, altération, divulgation ou destruction.' },
         { section: 'Modification de la Charte de Confidentialité', description: 'Parenthèse Océane se réserve le droit de mettre à jour cette charte de confidentialité à tout moment. Nous vous encourageons à consulter fréquemment cette page pour rester informé des modifications. Vous reconnaissez et acceptez qu\'il est de votre responsabilité de revoir périodiquement cette charte de confidentialité et de vous familiariser avec les modifications.' },
         { section: 'Votre Acceptation de Cette Charte', description: 'En utilisant ce site, vous signifiez votre acceptation de cette charte de confidentialité. Si vous n\'acceptez pas cette charte, veuillez ne pas utiliser notre site.' },
-        { section: 'Contactez-nous', description: 'Si vous avez des questions concernant cette charte de confidentialité, veuillez nous contacter à :\nParenthèse Océane\n32 Route de Saint-Hilaire\n85520 Saint-Vincent-sur-Jard\nTéléphone : +33 1 23 45 67 89\nE-mail : parentheseoceane@orange.fr' }
+        { section: 'Contactez-nous', description: 'Si vous avez des questions concernant cette charte de confidentialité, veuillez nous contacter à :\nParenthèse Océane\n32 Route de Saint-Hilaire\n85520 Saint-Vincent-sur-Jard\nTéléphone : +33 06 37 66 38 66\nE-mail : parentheseoceane@orange.fr' }
     ];
 </script>
 

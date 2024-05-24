@@ -8,7 +8,7 @@
 </script>
 
 <section class="section3">
-    <h1 class="title_card">Découvrez Nos Gîtes <br> Entre Nature & Mer</h1>
+    <h1 class="title_card">Découvrez Nos Gîtes <br> Entre Mer & Nature</h1>
   
     <div class="gites-rental">
         {#each rentals as { name, location, details, imageUrl, link, title }}

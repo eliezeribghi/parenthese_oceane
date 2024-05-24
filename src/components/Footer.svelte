@@ -62,13 +62,13 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-          >
+          >Facebook <br/>
             <img
               class="logo-meta"
               src="./assets/logo-meta.svg"
               alt="logo-meta"
               aria-hidden="true"
-            />
+            /> 
           </a>
           <!-- Ajoutez d'autres liens sociaux au besoin -->
         </div>
