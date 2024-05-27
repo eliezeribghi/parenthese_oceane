@@ -9,7 +9,7 @@
         1: { property: "capacity", suffix: "Hôtes" },
         2: { property: "rooms", suffix: "Chambre" },
         3: { property: "bathrooms", suffix: "Douche" },
-        4: { property: "beds", suffix: "Lits" },
+        4: { property: "beds", suffix: "Lit" },
         5: { property: "squareMeter", suffix: "m²" },
     };
 </script>
