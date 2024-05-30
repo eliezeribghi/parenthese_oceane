@@ -13,11 +13,11 @@
         <div class="instructions">
             <h1>Principales distances</h1>
             <ul>
-                <li><img src="./src/assets/imgLieuProximite/sunbathing-svgrepo-com.svg" alt=""  srcset="">1 km des plages</li>
-                <li><img src="./src/assets/imgLieuProximite/surf-svgrepo-com.svg" alt="" srcset="">30mn des Sables d’Olonne</li>
-                <li><img src="./src/assets/imgLieuProximite/emu-svgrepo-com.svg" alt="" srcset=""> 30mn de la Roche sur Yon</li>
-                <li><img src="./src/assets/imgLieuProximite/lighthouse-svgrepo-com.svg" alt="" srcset=""> 60mn de la Rochelle</li>
-                <li><img src="./src/assets/imgLieuProximite/stadium-svgrepo-com.svg" alt="" srcset=""> 80mn du Puy du Fou</li>
+                <li><img src="./assets/imgLieuProximite/sunbathing-svgrepo-com.svg" alt=""  srcset="">1 km des plages</li>
+                <li><img src="./assets/imgLieuProximite/surf-svgrepo-com.svg" alt="" srcset="">30mn des Sables d’Olonne</li>
+                <li><img src="./assets/imgLieuProximite/emu-svgrepo-com.svg" alt="" srcset=""> 30mn de la Roche sur Yon</li>
+                <li><img src="./assets/imgLieuProximite/lighthouse-svgrepo-com.svg" alt="" srcset=""> 60mn de la Rochelle</li>
+                <li><img src="./assets/imgLieuProximite/stadium-svgrepo-com.svg" alt="" srcset=""> 80mn du Puy du Fou</li>
             </ul>
         </div>
         <div></div>
