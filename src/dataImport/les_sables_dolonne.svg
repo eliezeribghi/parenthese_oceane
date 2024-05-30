@@ -1,0 +1,23 @@
+<svg width="480" height="436" viewBox="0 0 480 436" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      .blue { fill: #0033cc; }
+      .white { fill: #ffffff; }
+      .black { fill: #000000; }
+      .green { fill: #00cc00; }
+    </style>
+  </defs>
+  <g>
+    <path class="blue" d="M0 0h480v436H0z" />
+    <path class="white" d="M240 0l69.28 119.78h-138.56L240 0z" />
+    <path class="black" d="M265.06 38.6c0 3.92-6.36 7.1-14.2 7.1s-14.2-3.18-14.2-7.1 6.36-7.1 14.2-7.1 14.2 3.18 14.2 7.1z"/>
+    <path class="white" d="M220.8 109.78h38.4V199h-38.4z" />
+    <path class="black" d="M240 199l-12.73-22.09h25.46L240 199z" />
+    <path class="white" d="M224.67 149.54l-14.56-8.41 3.9-6.82 14.56 8.41-3.9 6.82zm-3.23 23.34l-14.56-8.41 3.9-6.82 14.56 8.41-3.9 6.82zm14.56-48.02l-14.56-8.41 3.9-6.82 14.56 8.41-3.9 6.82z"/>
+    <path class="black" d="M240 0l-69.28 119.78h138.56L240 0zm0 119.78l-13.64 23.59h27.28L240 119.78z" />
+    <path class="green" d="M0 199.78h480v47.77H0z"/>
+    <path class="white" d="M140 247.55h200v86.44H140z" />
+    <path class="black" d="M140 334.99h200v4.88H140z" />
+    <path class="white" d="M160.73 247.55h23.52v65.92h-23.52zM176 276.13h48v37.34h-48zM255.61 247.55h23.52v65.92h-23.52zM270.88 276.13h48v37.34h-48z"/>
+  </g>
+</svg>

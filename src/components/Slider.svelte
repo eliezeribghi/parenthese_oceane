@@ -1,7 +1,8 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
   import images from "../dataImport/+server";
-import '../style/components/slider.scss'
+  import '../style/components/slider.scss'
+
   let currentImageIndex = 0;
   let containerWidth = 0;
 
@@ -35,22 +36,19 @@ import '../style/components/slider.scss'
   }
 </script>
 
-<section class="carousel-container"  aria-label="Carousel" >
-   
+<section class="carousel-container" aria-label="Carousel">
   <div class="text-container top-text">
-    
     <!-- En-tête du carousel -->
-    <h1  id="carousel-heading" aria-label="Bienvenue à Saint Vincent sur Jard, Carousel" >
+    <h1 id="carousel-heading" aria-label="Bienvenue à Saint Vincent sur Jard, Carousel">
       BIENVENUE <br /> A <br /> SAINT VINCENT SUR JARD
     </h1>
- 
+
     <!-- Conteneur du logo -->
     <div class="logo-container">
-      <img class="logo-slide" src="./assets/logo.png" alt="Logo" loading="lazy" />
+      <img class="logo-slide" src="./assets/logo.png" alt="Logo" loading="lazy" aria-roledescription="logo carousel parenthese oceane gite vendée"/>
     </div>
-    
   </div>
-  
+
   <!-- Wrapper du carousel -->
   <div
     class="carousel-wrapper"
@@ -61,28 +59,26 @@ import '../style/components/slider.scss'
     <!-- Conteneur du carousel d'images -->
     <div
       class="image-carousel"
-      style={`transform: translateX(${
-        -currentImageIndex * window.innerWidth
-      }px); width: ${containerWidth}px`}
+      style={`transform: translateX(${-currentImageIndex * window.innerWidth}px); width: ${containerWidth}px`}
       role="listbox"
     >
-    
-      {#each images as { src, alt }, index}
-  
+      {#each images as { src, alt, title }, index}
+   
         <img
-        class="carousel-image"
+      
+          class="carousel-image"
           src={src}
+          title={title}
           srcset={`${src} 600w, ${src} 1200w, ${src} 2000w`}
           sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
           alt={`Image ${index + 1}: ${alt}`}
           role="presentation"
+          aria-roledescription="carousel image de gites vendée"
           aria-hidden={index !== currentImageIndex}
           aria-labelledby="carousel-heading"
           tabindex="-1"
         />
-        
       {/each}
     </div>
   </div>
 </section>
-

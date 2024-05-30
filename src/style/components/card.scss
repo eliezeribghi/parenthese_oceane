@@ -1,191 +1,124 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
-.section3 {
 
+.cards{
+    width: 100vw;
+}
+
+.section3 {
     overflow: hidden;
     background-color: $primary;
     min-width: 100vw;
-
+    padding-block: 2em;
+    padding-inline: min(8vw, 4em);
     height: auto;
-    padding: 6%;
-}
 
-/* Add your SCSS styles here */
-.gites-rental {
-    width: 100%;
-    height: auto;
-}
+    .title_card {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.7rem;
+        position: relative;
+        text-align: center;
+        color: $primary-light;
 
-.title_card {
-    letter-spacing: 2px;
+        span{
+            display: inline-block;
+            width: 100%;
 
-    font-weight: 300;
-    font-size: 1.5rem;
-    padding: 0.7em;
-    position: relative;
-    text-align: center;
-    color: $primary-light;
-    margin-bottom: 6vw;
-}
+            &:first-child{
+                color: rgba(255, 255, 255, 0.582);
+            }
+        }
+    }
 
-.title_card_card::after {
-    content: "";
-    position: absolute;
-    bottom: -60%;
-    left: 0;
-    width: 88vw;
-    height: 1px;
-    /* Ajustez l'épaisseur de la ligne selon vos préférences */
-    background-color: $primary-light;
-    /* Couleur de la ligne */
-}
+    .gites-rental {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        margin-block: 4em;
+        margin-inline-start: -1em;
+        gap: 4em;
 
-.rental-image {
-    margin-top: 18%;
-    opacity: 1;
-    transform: matrix(1, 0, 0, 1, 10, 1);
-    width: 90%;
-    height: 100%;
-    padding-right: 10%;
-}
+        .imageGites-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 25%;
+            min-width: 400px;
+            max-width: 500px;
 
-.rental-card {
-    text-align: left;
-    line-height: 1.1;
-    letter-spacing: 1vw;
-    color: #000000b6;
-    padding: 4%;
-    left: 2%;
-    font-weight: 300;
-    margin: 1.7em;
-    position: relative;
-    background-color: rgba(225, 225, 225, 0.426);
-    width: 93%;
-    height: auto;
-    margin-top: calc(-10% - 5%);
-    overflow: hidden;
-}
+            @media screen and (max-width: 768px) {
+                min-width: 100%;
+            }
 
-.textCardH2 {
-    margin: 1em;
-    text-align: left;
+            .imageGites{
+                position: relative;
+                display: flex;
+                max-width: 100%;
+            }
+            .rental-image {
+                position: relative;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                aspect-ratio: 16/9;
+                overflow: hidden;
+                border-radius: 3px;
+            }
+            
+            .rental-card {
+                position: absolute;
+                bottom: -2em;
+                right: - 2em;
+                width: calc(100% - 2vw);
+                height: auto;
+                border-radius: 3px;
+                padding: 1em;
+                background-color: rgba(225, 225, 225, 0.426);
 
+                .textCardH2 {
+                    text-align: left;
+                    // color: $primary-light;
+                    font-weight: 700;
+                    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.116);
+                }
+                
+                .textCard {
+                    letter-spacing: 0.2px;
+                    text-align: start;
+                    font-size: 1em;
+                    color: #000000c5;
+                }
+                
+                &_wrapperText{
+                    padding-block: .5em;
+                }
 
-}
-
-.textCard {
-    letter-spacing: 0.2px;
-    text-align: start;
-    font-size: 1em;
-}
-
-.linkCard {
-    font-weight: bold;
-    text-decoration: none;
-    color: inherit;
+                .linkCard {
+                    display: block;
+                    width: fit-content;
+                    font-weight: 500;
+                    font-size: .9em;
+                    color: $primary-light;
+                    background-color:#1e55b3c2;
+                    padding: 5px 10px;
+                    border-radius: 3px;
+                }
+            }
+            
+        }
+    }
+    
 }
 
 @include mixins.tablet {
-    .rental-card {
-
-        line-height: 1.3;
-        letter-spacing: .1vw;
-
-        padding: 3%;
-        position: relative;
-        background-color: rgba(225, 225, 225, 0.5);
-        max-width: 30em;
-        margin-top: calc(6% - 19%);
-        margin-left: calc(15% - 1%);
-        left: 15%;
-        overflow: hidden;
-    }
-
-    .rental-image {
-        padding: 0%;
-        height: 30vh;
-        width: auto;
-
-    }
-
 }
 
 
 @include mixins.desktop {
-    .section3 {
-        margin-top: 0%;
-        padding: 2% 6% 7% 6%;
-        height: auto;
-    }
-
-    .title_card {
-        letter-spacing: .2em;
-  
-        padding: .1em;
-        text-align: center;
-        color: $primary-light;
-        margin-bottom: 6vw;
-    }
-
-    .title_card::after {
-        display: none;
-    }
-
-    .gites-rental {
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .imageGites {
-        width: 33.33%;
-      
-        padding: 0 1em;
-        /* Espacement entre les images */
-        box-sizing: border-box;
-        /* Inclut les bordures et le padding dans la largeur totale */
-        flex: 0 0 auto;
-        /* Empêche le rétrécissement des éléments flexibles */
-    }
-
-    .rental-image {
-        width: 90%;
-        height: auto;
-        padding: 0;
-        justify-content: space-between;
-        margin-top: 0;
-        opacity: 1;
-        transform: matrix(1, 0, 0, 1, 10, 1);
-
-    }
-
-    .rental-card {
-        margin-top: calc(-.9em - 13%);
-        text-align: start;
-        letter-spacing: 0;
-        color: #000000b6;
-        background-color: rgba(225, 225, 225, 0.5);
-        width: 88%;
-        height: auto;
-        left: 2.7em;
-        margin-left: calc(8% - 1%);
-    }
-
-    .textCardH2 {
-        padding: 0.1em;
-
-        font-size: 1.3rem;
-    }
-
-    .textCard {
-        letter-spacing: 0;
-        font-size: 1.2rem;
-    }
-
-
-
-
 
 }

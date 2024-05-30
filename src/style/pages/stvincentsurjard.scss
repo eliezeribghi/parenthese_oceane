@@ -181,14 +181,13 @@
   border: .1em solid $primary;
   border-radius: .4em;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-
+  z-index: 9999;
 }
 
 .customDialog {
   font-weight: bold;
   color: $primary-dark;
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
@@ -209,110 +208,155 @@
   cursor: pointer;
   margin: 0 10%;
   font-size: 1em;
-
-
 }
-
+.confirmButton{
+  color: $primary;
+  background-color: $primary-light;
+  border: solid $primary;
+border-radius: .1em;
+}
 .modalLieu {
-  margin-top: 13%;
-  display: block;
+  display: flex;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
+  padding-inline: 5vw;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.325);
   animation: fadeIn 0.5s;
+  z-index: 9998;
+
+  .modalContent {
+    position: relative;
+    display: block;
+    background-color: #fefefe;
+    border: 1px solid $primary;
+    border-radius: 1em;
+    padding: 4em;
+    max-width: 750px;
+    height: auto;
+    max-height: calc(100vh - 5vw);
+    // max-height: 950px;
+    overflow-y: auto;
+    margin: auto;
+    text-align: center;
+
+    @media screen and (max-width: 768px){
+      padding-inline: 2em;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1em;
+      right: 2em;
+      cursor: pointer;
+      color: #aaa;
+      // float: right;
+      font-size: 1.7em;
+      font-weight: 600;
+
+      &:hover,
+      &:focus {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    &_figure{
+      height: fit-content;
+      &-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        box-shadow: 0 0 9px 1px rgb(223, 223, 223);
+        padding: 5px;
+        width: 300px;
+        max-width: 100%;
+        border-radius: 3px;
+        margin-inline: auto;
+
+        @media screen and (max-width: 768px){
+          width: 250px;
+        }
+      }
+
+      &-title{
+        color: $primary;
+        font-weight: 800;
+        font-size: 1.5em;
+        text-align: center;
+        margin-block-start: 2em;
+      }
+    }
+
+    &_wrapperDescription{
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1em;
+      margin-block: 1em;
+
+      &-item{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+        margin-block: 1em;
+
+        &--title{
+          position: relative;
+          color: $primary;
+          font-weight: 500;
+          font-size: 1.3em;
+          width: fit-content;
+          margin-inline: auto;
+
+          &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: - .3em;
+            border-bottom: 1px solid rgba(0, 42, 104, 0.083);
+          }
+        }
+
+        &--content{
+          color: #535353;
+          // text-align: left;
+          padding-inline: 5px;
+          font-size: .8em;
+          line-height: 1.2em;
+        }
+      }
+    }
+
+    &-more{
+      position: relative;
+      top: 1em;
+      display: inline;
+      font-weight: 700;
+      border: 1px solid $primary;
+      background-color: transparent;
+      border-radius: 3px;
+      padding: 9px 24px;
+      width: fit-content;
+      margin-inline: auto;
+      color: $primary;
+      text-decoration: none;
+      transition: background-color 300ms, border 300ms, color 300ms;
+
+      &:hover{
+        background-color: $primary;
+        border-color: transparent;
+        color: white;
+      }
+    }
+  }
 }
-.modalLieu h2 {
-font-weight: bold;
 
-}
-.modalContent {
-  background-color: #fefefe;
-  margin: 20vh auto;
-  padding: 2em;
-  border: 1px solid $primary;
-  width: 85%;
-  height: auto;
-  border-radius: 1em;
-  padding: 4em;
-  min-width: 30%;
-}
-
-.modalContent img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  object-fit: cover;
-box-shadow: 0 1px 9px $primary;
-
-
-padding: 5px;
-width: 150px;
-}
-
-
-
-.modalContent h2 {
-  margin-top: 1.5em;
-  color: $primary;
-  font-size: 1.4em;
-
-}
-
-.modalContent h3 {
-  font-style: normal;
-
-  color: $primary;
-  margin: 5% 0 5% 0;
-
-
-}
-
-.modalContent p {
-  color: $primary-dark;
-  font-size: .8em;
-  margin-top: 10%;
-}
-
-.modalContent a {
-  padding: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $primary-dark;
-  text-decoration: none;
-}
-
-.modalContent a:hover {
-  color: #636363;
-  transition: background-color 0.3s, color 0.3s;
-}
-.modalLieu a {
-
-  font-weight: bold;
-}
-.close-button {
-  position: relative;
-
-
-  cursor: pointer;
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  cursor: pointer;
-}
 .titlt-lieu h2{
   color: $primary;
   margin-top: 0;
@@ -341,9 +385,9 @@ width: 150px;
   .modalContent img {
     width: 250px;
   }
-  .modalContent p {
-    margin: 0 10vh 0 10vh;
-  }
+  // .modalContent p {
+  //   margin: 0 10vh 0 10vh;
+  // }
 }
 
 @include mixins.desktop {
@@ -408,45 +452,12 @@ width: 150px;
     margin: 0 3em 0 2em;
   }
 
-  .modalLieu {
- 
-padding: 0  30% 0% 30%;
-
-  }
-  .modalContent{
-   min-width: 70vh;
-
-  }
+  // .modalContent p {
+  //   margin: 0 10vw 0 10vw;
+  // }
 
 
-  .modalContent h3 {
-
-    margin: 1em;
-  }
-
-  .modalContent p {
-    margin: 0 10vw 0 10vw;
-  }
-  .modalContent img {
-
-    width: 20vh;
-    height: 20vh;
   
-  }
-  .customDialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background: $primary-light;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   ::-webkit-scrollbar {
     display: none; /* Pour les navigateurs basés sur WebKit comme Chrome et Safari */
 }

@@ -24,11 +24,11 @@ const myAccommodation = [{
   beds: 2,
   squareMeter: 37,
   svgPaths: [
-    { id: 1, path: "./assets/public/guests.svg", title: "Capacity", text: "Hôtes" },
-    { id: 2, path: "./assets/public/bedrooms.svg", title: "Number of rooms", text: "Chambre" },
-    { id: 3, path: "./assets/public/shower.svg", title: "Number of bathrooms", text: "Douche " },
-    { id: 4, path: "./assets/public/beds.svg", title: "Number of beds", text: "Lits" },
-    { id: 5, path: "./assets/public/area.svg", title: "Surface", text: "m2" }
+    { id: 1, path: "./assets/public/guests.svg", title: "Capacity Holiday Cottage", text: "Hôtes" },
+    { id: 2, path: "./assets/public/bedrooms.svg", title: "Number of roomsHoliday Cottage ", text: "Chambre" },
+    { id: 3, path: "./assets/public/shower.svg", title: "Number of bathrooms Holiday Cottage", text: "Douche " },
+    { id: 4, path: "./assets/public/beds.svg", title: "Number of beds Holiday Cottage", text: "Lits" },
+    { id: 5, path: "./assets/public/area.svg", title: "Surface Holiday Cottage", text: "m2" },
   ],
 },
 ];

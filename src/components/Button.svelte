@@ -43,9 +43,9 @@ onMount(() => {
 <button class="buttonDarkMode"  tabindex="0" on:click={toggleDarkMode}>
     {#if darkMode}
         <!-- Afficher l'image pour le mode nuit -->
-        <img class="sunDarkMod" src="./assets/sunDarkMode.svg" alt="lune" />
+        <img class="sunDarkMod" src="./assets/8666735_moon_icon.svg" alt="lune" />
     {:else}
         <!-- Afficher l'image pour le mode jour -->
-        <img class="moodDarkMod" src="./assets/moodDarkMode.svg" alt="soleil"/>
+        <img class="moodDarkMod" src="./assets/9025960_sun_icon.svg" alt="soleil"/>
     {/if}
 </button>

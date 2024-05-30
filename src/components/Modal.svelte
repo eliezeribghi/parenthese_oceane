@@ -2,7 +2,7 @@
   import '../style/utils/_mixins.scss';
 
   let showModal = true;
-  let emailLink = "parentheseoceane@orange.fr";
+  let emailLink = "mailto:parentheseoceane@orange.fr"; // Ajout du protocole mailto:
   let phoneNumber = "+33 06 37 66 38 66";
   let facebookLink = "https://www.facebook.com/profile.php?id=100077286376919";
 

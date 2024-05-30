@@ -241,27 +241,44 @@ window.addEventListener("scroll", () => {
     
     <div class="modalContent">
       <span class="close-button" role="button" tabindex="0" on:click={closeModal} on:keydown={(event) => { if (event.key === 'Enter' || event.key === 'Escape') { closeModal(); } }}>&times;</span>
- 
-      <img 
-        loading="lazy"
-        src={modalContent.src}
-        alt={modalContent.alt}
-        title={modalContent.name}
-      />
-       <h2>{modalContent.title}</h2>
-      <h3> <strong>Description</strong></h3>
-      <p>{modalContent.description}</p>
-      <h3><strong>Intérêt touristique</strong></h3>
-      <p>{modalContent.interest}</p>
-      <h3><strong>Informations pratiques</strong></h3>
-      <p>{modalContent.practicalInfo}</p>
-      <h3><strong> Lien vers site</strong></h3>
+      
+      <figure class="modalContent_figure">
+        <img 
+          class="modalContent_figure-image"
+          loading="lazy"
+          src={modalContent.src}
+          alt={modalContent.alt}
+          title={modalContent.name}
+        />
+        <figcaption  class="modalContent_figure-title">{modalContent.title}</figcaption>
+      </figure>
+
+      <div class="modalContent_wrapperDescription">
+        <div class="modalContent_wrapperDescription-item">
+          <h3 class="modalContent_wrapperDescription-item--title"> <strong>Description</strong></h3>
+          <p class="modalContent_wrapperDescription-item--content">{modalContent.description}</p>
+        </div>
+        
+        <div class="modalContent_wrapperDescription-item">
+          <h3 class="modalContent_wrapperDescription-item--title"><strong>Intérêt touristique</strong></h3>
+          <p class="modalContent_wrapperDescription-item--content">{modalContent.interest}</p>
+        </div>
+
+        <div class="modalContent_wrapperDescription-item">
+          <h3 class="modalContent_wrapperDescription-item--title"><strong>Informations pratiques</strong></h3>
+          <p class="modalContent_wrapperDescription-item--content">{modalContent.practicalInfo}</p>
+        </div>
+      </div>
+
+      <!-- <h3><strong> Lien vers site</strong></h3> -->
       <a
         href={modalContent.url}
         on:click|preventDefault={() => confirmRedirect(modalContent.url, modalContent.name)}
+        class="modalContent-more"
       >
        En savoir plus
       </a>
+
     </div>
   </div>
   {/if}

@@ -7,6 +7,7 @@
   margin-inline-end: $heightModal;
   z-index: 1;
   transform: scale(1.3);
+  order: 1;
 
   button{
     span, span::before, span::after{
@@ -17,7 +18,7 @@
   &.opened{
     top: calc($heightModal + 10px);
     align-self: flex-start;
-
+    order: inherit;
     span{
       background-color: transparent!important;
     }
@@ -41,14 +42,52 @@
   margin: 0;
   width: 100%;
   height: auto;
-  background-color: #fff;
-  z-index: 99;
+  padding-inline: 2vw;
+  gap: 2em;
+  // background-color: #fff;
+  transition: background-color 200ms ease;
+  z-index: 9999;
+
+  a{
+    order: 3;
+  }
+
+  &.opened{
+    padding-inline: 0;
+    padding-left: 44px;
+    background-color: rgba(255, 255, 255, 0.644);
+
+    .buttonDarkMode{
+      display: none;
+    }
+
+    .menulink a {
+      color: $primary;
+    }
+  }
+
+  &.active{
+    background-color: rgba(255, 255, 255, 0.644);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.095);
+
+    a{
+      color: $primary;
+    }
+  }
+
+  &.linknotactive{
+    a{
+      color: $primary;
+    }
+  }
 
   a{
     position: relative;
     margin-right: auto;
     margin-block: 10px;
     font-weight: 500;
+    transition: color 400ms ease;
     .logoHome{
       // position: absolute;
       display: block;
@@ -83,18 +122,28 @@
 }
 
 .menuHeader li:not(:last-child) {
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 .menulink:hover {
-  background-color: $primary-light;
+  // background-color: $primary-light;
+  background-color: rgba(255, 255, 255, 0.87);
   transition: ease-in-out 0.4s all;
+
+  a{
+    color: $primary;
+  }
 }
 
 .menulink a {
-  font-size: 1.5em;
-  color: $primary;
+  position: relative;
+  font-size: 1.2em;
+  font-weight: 700;
+  // color: $primary;
+  color: $primary-light;
+  // text-shadow: 0 0 1px rgba(0, 0, 0, 0.438);
   text-decoration: none;
+  z-index: 9999;
 }
 
 
@@ -113,18 +162,28 @@
   }
 
   .menuHeader {
-    height: 115px ;
-    z-index: 99;
+    height: 115px;
+    gap: 0;
     justify-content: flex-end;
+
+    a{
+      order: 3;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 
   .menuHeader ul {
-  
     padding-top: 0;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     padding-bottom: 0;
+    gap: 2vw;
+    // margin-inline-end: 5em;
+    order: 2;
   }
 
   .menuHeader .menulink {
@@ -134,12 +193,13 @@
     transition: ease-in-out 0.4s all;
   }
   .menulink {
-
     font-size: .6em;
+    min-width: 1em;
+    border-radius: 3px;
 
- min-width: 1em;
-  
-
+    a{
+      font-size: 1.5em;
+    }
  }
 
 }

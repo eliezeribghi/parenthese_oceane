@@ -4,13 +4,12 @@
     import Icon from "../components/Icon.svelte";
     import Carousel from "../components/Carousel.svelte";
     import { images } from "../dataImport/dataEtale/imgEtale";
-   
-
     import {
         myAccommodation,
         tarifs,
         combinedData,
     } from "../dataImport/dataEtale/informationEtale";
+
     const [{ svgPaths }] = myAccommodation;
 
     const cottage = combinedData.find((item) => item.title === "Gite 3 pièces");
@@ -22,23 +21,22 @@
             id === 1
                 ? "barbecue"
                 : id === 2
-                  ? "private-parking"
-                  : id === 3
-                    ? "shared-garden"
-                    : id === 4
-                      ? "lounger-chair"
-                      : id === 5
-                        ? "patio-furniture"
-                        : id === 6
-                          ? "private-terrace"
-                          : ""
+                ? "private-parking"
+                : id === 3
+                ? "shared-garden"
+                : id === 4
+                ? "lounger-chair"
+                : id === 5
+                ? "patio-furniture"
+                : id === 6
+                ? "private-terrace"
+                : ""
         }`;
     }
 
     function scrollToSection(event) {
         event.preventDefault();
         const sectionId = event.currentTarget.dataset.section;
-        console.log("Section ID:", sectionId);
         const section = document.getElementById(sectionId);
 
         if (section) {
@@ -48,15 +46,9 @@
 
     function handleKeyDown(event) {
         if (event.key === "Enter") {
-            const sectionId = event.currentTarget.dataset.section;
-            const section = document.getElementById(sectionId);
-
-            if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
-            }
+            scrollToSection(event);
         }
     }
- 
 </script>
 
 <section class="sectionPageCottage" aria-labelledby="cottageHeading">
@@ -74,46 +66,32 @@
             data-section="cottageDescription"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Description du gîte">DESCRIPTION</a
-        >
-
+            aria-label="Aller à la section Description du gîte">DESCRIPTION</a>
         <a
-            href="#equipmentOutdoor"
+            href="#equipmentOutdoorSection"
             tabindex="0"
-            data-section="equipmentOutdoor"
+            data-section="equipmentOutdoorSection"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Équipement extérieur du gîte"
-            >ÉQUIPEMENT
-        </a>
-
+            aria-label="Aller à la section Équipement extérieur du gîte">ÉQUIPEMENT</a>
         <a
             href="#service"
             tabindex="0"
             data-section="service"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Services du gîte">SERVICES</a
-        >
-
+            aria-label="Aller à la section Services du gîte">SERVICES</a>
         <a
             href="#tarif"
             tabindex="0"
             data-section="tarif"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Tarifs du gîte">TARIFS</a
-        >
+            aria-label="Aller à la section Tarifs du gîte">TARIFS</a>
     </nav>
 </section>
 
-<!-- Les autres sections sont également adaptées de manière similaire -->
-
-<section
-   
-    class="sectionMain"
-    aria-labelledby="cottageDescHeading"
->
+<section class="sectionMain" aria-labelledby="cottageDescHeading">
     <div class="description">
         <div class="squareDescription">
             <h1 class="descriptionTitleMobile" id="cottageDescHeading">
@@ -124,23 +102,20 @@
                 <Carousel {images} />
             </section>
 
-            <section  id="cottageDescription" class="iconDesktop" role="presentation">
+            <section id="cottageDescription" class="iconDesktop" role="presentation">
                 <Icon {myAccommodation} />
-                <h2 class="title_texte desktopText"> {name} </h2> 
-                <p  class="container-text desktopText">
-                    <!-- DESKTOP -->
+                <h2 class="title_texte desktopText">{name}</h2> 
+                <p class="container-text desktopText">
                     {@html description}
                 </p>
             </section>
 
-            <div class="wrapperSection" >  
-                <h2 class="mobilText"> {name} </h2> 
+            <div class="wrapperSection">
+                <h2 class="mobilText">{name}</h2> 
                 <p class="container-text mobilText">
-             
                     {@html description}
                 </p>
-<span id="equipmentOutdoor"  ></span>
-                <section    class="equipements-section">
+                <section id="equipmentsSection" class="equipements-section">
                     <div class="equipements">
                         <h2 class="equipementH2">Équipements inclus</h2>
                         <ul>
@@ -158,15 +133,9 @@
                     </div>
                 </section>
 
-                <section id="roomCompositionHeading"   class="Compositions-section">
-                    <div
-                        class="room-composition"
-                        aria-labelledby="roomCompositionHeading"
-                    >
-                        <h2 class="roomH2">
-                            Composition des chambres
-                        </h2>
-
+                <section id="roomComposition" class="Compositions-section">
+                    <div class="room-composition" aria-labelledby="roomCompositionHeading">
+                        <h2 class="roomH2">Composition des chambres</h2>
                         <ul class="chambre">
                             {#each roomComposition as room}
                                 <li>
@@ -178,7 +147,6 @@
                                 </li>
                             {/each}
                         </ul>
-                        
                     </div>
                 </section>
             </div>
@@ -186,24 +154,14 @@
     </div>
 </section>
 
-<section
-    id="equipmentOutdoor"
-    class="equipment"
-    aria-labelledby="equipeOutdoorHeading"
->
+<section id="equipmentOutdoorSection" class="equipment" aria-labelledby="equipOutdoorHeading">
     <div class="outdoor-equipment">
-        <h2
-            class="outdoorH2"
-            id="equipOutdoorHeading"
-            aria-label="Équipement extérieur"
-        >
-            Équipement extérieur
-        </h2>
-
+        <h2 class="outdoorH2" id="equipOutdoorHeading">Équipement extérieur</h2>
         <ul class="equipement-list">
             {#each equipmentOutdoorItems as { id, name, imageSrc }}
                 <li class={getClassName(id)}>
-                    <img src={imageSrc} alt={name} srcset="" />{name}
+                    <img src={imageSrc} alt={name} />
+                    {name}
                 </li>
             {/each}
         </ul>
@@ -217,9 +175,7 @@
             <li aria-label="Animaux gratuits">Animaux gratuits</li>
             <li aria-label="Linge de maison fourni">Linge de maison fourni</li>
             <li aria-label="Lits faits à l'arrivée">Lits faits à l'arrivée</li>
-            <li aria-label="Ménage fin de séjour en option*">
-                Ménage fin de séjour en option*
-            </li>
+            <li aria-label="Ménage fin de séjour en option*">Ménage fin de séjour en option*</li>
         </ul>
     </div>
 </section>
@@ -227,8 +183,8 @@
 <section id="tarif" class="rates" aria-labelledby="tarifHeading">
     <h2 class="ratesTitle" id="tarifHeading">Tarifs</h2>
     <div class="tariffDetails">
-        {#each tarifs as { label, amount, isBold, additionalInfo }, key (key)}
-            <p class="tariffItem" {key}>
+        {#each tarifs as { label, amount, isBold, additionalInfo }}
+            <p class="tariffItem">
                 {#if isBold}
                     {label} <span class="tariffAmount">{amount}</span>
                 {:else}
@@ -243,4 +199,5 @@
 </section>
 
 <style>
+    /* Add relevant styles here */
 </style>

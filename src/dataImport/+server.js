@@ -25,8 +25,6 @@ const images = [
         src: './assets/imgCarousel/pictureHome3.webp',
         title: 'Titre de l\'image '
       },
-
-
       {
         alt: 'Description de l\'image 3 ',
         src: './assets/imgCarousel/pictureHome4.webp',
@@ -52,9 +50,9 @@ const images = [
       src: './assets/imgCarousel/pictureHome8.webp',
       title: 'Titre de l\'image '
     }
-  // ... Ajoutez d'autres objets d'image avec leurs propriétés
+ 
 ];
-// images.js
+
 
 
 

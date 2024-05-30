@@ -2,8 +2,15 @@
 @use "../utils/mixins";
 
 .modal-content{
+    display: block;
     p{
-        font-size: 16px;
+        margin-block: auto;
+        line-height: 16px;
+
+        .contact-link{
+            color: $primary-light;
+            font-size: .7em;
+        }
     }
 }
 
@@ -21,8 +28,8 @@
 }
 
 .modal {
-    padding: .1em; 
-    background-color: $primary;
+    // background-color: $primary;
+    background-color: #0d45a5c0;
     width: 100%;
     height: auto;
     text-align: center;
@@ -39,11 +46,10 @@
 
 }
 
-.contact-link {
-
-    margin: 1em;
-    font-size: .5em;
-    color: $primary-light;
-    /* Couleur du lien */
-    text-decoration: none;
-}
+// .contact-link {
+//     margin: 1em;
+//     font-size: .5em;
+//     color: $primary-light;
+//     /* Couleur du lien */
+//     text-decoration: none;
+// }
