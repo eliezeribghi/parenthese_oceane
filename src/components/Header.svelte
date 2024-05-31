@@ -139,7 +139,7 @@
     {/if}
 
 
-   <a href="/" tabindex={opened ? -1 : 0}>
+   <a href="/" tabindex={opened ? -1 : 0} class="anchor-logo">
     <img
     class={`logoHome ${opened && window.innerWidth < 1025 ? "hide-logo" : ""}`}
     src="./assets/logo.png"

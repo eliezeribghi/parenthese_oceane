@@ -3,9 +3,9 @@
 
 
 .container-map {
-
-
-    margin-top: 10em;
+    padding-block: calc($heightModal + 6em);
+    padding-block-end: 4em;
+    padding-inline: 2vw;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -29,113 +29,132 @@ details>* {
 }
 
 .instructions,
-iframe {}
+iframe {
+    // border: #1e55b33b 1px solid;
+    border-radius: 3px;
+}
 
 
 .container-map h1 {
-text-emphasis: none;
-   margin: 0;
-
+    text-emphasis: none;
+    margin: 0;
+    color: $primary;
+    font-weight: 700;
 }
 
 .custom-header {
-
     color: $primary;
     font-size: 1.4em;
     background-color: $primary-light;
-
     text-align: center;
 }
 
 .iframe {
-   
     max-width: 100%;
-  
 }
 
 .custom-main {
     display: flex;
-    padding: 1rem;
+    padding: 2em;
+    gap: 2em;
     flex-direction: column;
-
     align-items: center;
     flex-grow: 1;
 
 
 
-.instructions {
-    color: #1e55b3;
-    margin-top: auto;
-    text-align: left;
+    .instructions {
+        color: #1e55b3;
+        text-align: left;
 
-    li {
-        display: flex;
-        padding-left: 1.4em;
-        font-size: 1.2em;
-        cursor: pointer;
-        margin: .5em;
-        padding: .3em;
-        padding-left: 2rem;
-        list-style-position: inside;
-       
-        align-items: center;
-        img{
-margin-right: 1em;
-width: 2em;
-         
-        }
-    }
-
-    h2 {
-        padding: 1em;
-    }
-
-}}
-
-.lieuxDeProximite {
-
-    width: 100%;
-    background-color: #1e55b313;
-   
-
-    h2 {
-
-        color: $primary;
-        font-size: 500;
-    }
-
-    .flex-containerProximite {
-        margin-top: 4em;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: 1em;
-
-        h2 {
-
-            color: $primary;
-
-        }
-
-        .section_commerce, 
-        .section_restauration {
-            ul {
-                text-align: start;
-        margin: 1em;
-                .liste_commerces,
-                .liste_restaurants {
-                    text-align: left;
-                    margin: 1em;
-                    text-wrap: balance;
+        ul{
+            // width: 100%;
+            li {
+                display: flex;
+                font-size: 1.2em;
+                cursor: pointer;
+                margin: .5em;
+                padding: .3em;
+                gap: .5rem;
+                list-style-position: inside;
+                align-items: center;
+                white-space: nowrap;
+    
+                span{
+                    font-variant: all-small-caps proportional-nums;
                 }
 
-
+                img {
+                    margin-right: 1em;
+                    width: 2em;
+    
+                }
             }
-
         }
-        
+
+        h2 {
+            height: fit-content;
+            font-size: 1.3em;
+            text-decoration: underline;
+            // padding: 1em;
+        }
+
     }
+}
+
+.lieuxDeProximite {
+    display: block;
+    width: 100%;
+    padding-inline: 4em;
+    // margin-inline: 4em;
+
+    .containerProximite{
+        height: 100%;
+        width: 100%;
+        background-color: #1e55b313;
+        padding: 2em;
+
+        #proximityHeading{
+            color: $primary;
+            font-weight: 700;
+        }
+    
+        .flex-containerProximite {
+            margin-top: 4em;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 1em;
+    
+            h2 {
+                color: $primary;
+                text-decoration-line: underline;
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+    
+            .section_commerce,
+            .section_restauration {
+                ul {
+                    text-align: start;
+                    margin: 1em;
+    
+                    .liste_commerces,
+                    .liste_restaurants {
+                        text-align: left;
+                        margin: 1em;
+                        text-wrap: balance;
+                    }
+    
+    
+                }
+    
+            }
+    
+        }
+    }
+   
 }
 
 
@@ -148,10 +167,13 @@ a {
 
 }
 
-.text_footer p {
-    margin: 0 20% 0 20%;
-    text-align: center;
-
+.text_footer {
+    margin-block: 2em;
+    p{
+        text-align: center;
+        width: calc(100% - 15vw);
+        margin-inline: auto;
+    }
 }
 
 @include mixins.tablet {
@@ -164,27 +186,24 @@ a {
 /* Styles responsives */
 @include mixins.desktop {
     .iframe {
-        width: 50%;
-      height: 50%;
-        flex-shrink: 0;
+        flex: 60%;
+        max-width: 60%;
+        // width: 51.1%;
+        // height: 50%;
+        // flex-shrink: 0;
     }
 
     .container-map {
-
-        margin-top: 10em;
         height: auto;
     }
 
     .custom-main {
-        padding: 1rem;
-        display: flex;
+        padding-inline: 4em;
+        padding-block: 2em;
         flex-direction: row;
-        align-items: center;
         justify-content: space-evenly;
-
         width: 100%;
         max-width: 100em;
-
     }
 
     .custom-header {
@@ -192,28 +211,35 @@ a {
         background-color: #fff;
         color: #1e55b3;
         font-size: 1.6em;
+        font-weight: 800;
         text-align: center;
     }
 
     .instructions,
     iframe {
+        flex: 40%;
+        max-width: 40%;
         // width: 50%;
-        min-height: 30em;
-        min-width: 30em;
+        // min-height: 30em;
+        // min-width: 30em;
     }
 
     .instructions {
-        display:grid;
-        flex-direction: center;
-        justify-content: center;
-width: 50%;
-        padding-right: 4rem;
-     
+        // display: flex;
+        // flex-direction: column;
+        // display: grid;
+        // width: 50%;
+        h2{
+            height: 100%;
+            margin-bottom: auto;
+        }
+        ul{
+            display: block;
+            height: 100%;
+        }
     }
 
     .text_footer {
-
-        margin: 8em 0 5em 0;
     }
 
 }

@@ -2,6 +2,23 @@
 <script>
     import { link } from "svelte-spa-router";
     import { commerces, restaurantsBars } from "../dataImport/dataProximite";
+
+    let dialogDetails = {};
+    let dialogVisible = false;
+
+    const confirmRedirect = (url, name) => {
+        dialogDetails = { url, name }; // Utilisation de la déstructuration pour éviter les mutations directes
+        dialogVisible = true;
+    };
+
+    const proceedToSite = () => {
+        window.open(dialogDetails.url, "_blank");
+        dialogVisible = false;
+    };
+
+    const cancelRedirect = () => {
+        dialogVisible = false;
+    };
 </script>
 
 <div class="container-map">
@@ -11,13 +28,43 @@
 
     <div class="custom-main">
         <div class="instructions">
-            <h1>Principales distances</h1>
+            <h2>Principales distances</h2>
             <ul>
-                <li><img src="./assets/imgLieuProximite/sunbathing-svgrepo-com.svg" alt=""  srcset="">1 km des plages</li>
-                <li><img src="./assets/imgLieuProximite/surf-svgrepo-com.svg" alt="" srcset="">30mn des Sables d’Olonne</li>
-                <li><img src="./assets/imgLieuProximite/emu-svgrepo-com.svg" alt="" srcset=""> 30mn de la Roche sur Yon</li>
-                <li><img src="./assets/imgLieuProximite/lighthouse-svgrepo-com.svg" alt="" srcset=""> 60mn de la Rochelle</li>
-                <li><img src="./assets/imgLieuProximite/stadium-svgrepo-com.svg" alt="" srcset=""> 80mn du Puy du Fou</li>
+                <li>
+                    <img
+                        src="./assets/imgLieuProximite/sunbathing-svgrepo-com.svg"
+                        alt=""
+                        srcset=""
+                    /><span>1 km </span> des plages
+                </li>
+                <li>
+                    <img
+                        src="./assets/imgLieuProximite/surf-svgrepo-com.svg"
+                        alt=""
+                        srcset=""
+                    /><span>30mn </span> des Sables d’Olonne
+                </li>
+                <li>
+                    <img
+                        src="./assets/imgLieuProximite/emu-svgrepo-com.svg"
+                        alt=""
+                        srcset=""
+                    /><span>30mn </span> de la Roche sur Yon
+                </li>
+                <li>
+                    <img
+                        src="./assets/imgLieuProximite/lighthouse-svgrepo-com.svg"
+                        alt=""
+                        srcset=""
+                    /><span>60mn</span> de la Rochelle
+                </li>
+                <li>
+                    <img
+                        src="./assets/imgLieuProximite/stadium-svgrepo-com.svg"
+                        alt=""
+                        srcset=""
+                    /><span>80mn</span> du Puy du Fou
+                </li>
             </ul>
         </div>
         <div></div>
@@ -40,32 +87,49 @@
             role="region"
             aria-labelledby="proximityHeading"
         >
-            <h2 id="proximityHeading">Commerces et Restaurants</h2>
+            <h2 id="proximityHeading">COMMERCES & RESTAURANTS</h2>
             <div class="flex-containerProximite">
                 <div
                     class="section_commerce"
                     role="region"
                     aria-labelledby="commerceHeading"
                 >
-                    <h2 id="commerceHeading">COMMERCES</h2>
+                    <h2 id="commerceHeading">Commerces</h2>
 
                     <ul>
                         {#each commerces as commerce}
-                        <div class=" liste_commerces">
-                            <li>{commerce.name} - Tel. : {commerce.tel}</li>
-                            {#if commerce.address}
+                            <div class=" liste_commerces">
                                 <li>
-                                    <span>Adresse :</span>
-                                    {commerce.address}
-                                    {#if commerce.site}
-                                        <span> | Site : </span>
-                                        <a href={commerce.site} target="_blank"
-                                            >En savoir plus</a
-                                        >
-                                    {/if}
+                                    <strong>
+                                        {commerce.name}
+                                    </strong> <br /> - Tel. :
+                                    <a
+                                        href="tel:{commerce.tel}"
+                                        class="phone-number">{commerce.tel}</a
+                                    >
                                 </li>
-                            {/if}
-                        </div>
+                                {#if commerce.address}
+                                    <li>
+                                        <span>Adresse :</span>
+                                        <address>
+                                            {commerce.address}
+                                        </address>
+                                        {#if commerce.site}
+                                            <span> | Site : </span>
+                                            <a
+                                                href={commerce.site}
+                                                on:click|preventDefault={() =>
+                                                    confirmRedirect(
+                                                        commerce.site,
+                                                        commerce.name,
+                                                    )}
+                                                class="modalContent-more"
+                                                >En savoir plus</a
+                                            >
+                                        {/if}
+                                    </li>
+                                {/if}
+                            </div>
                         {/each}
                     </ul>
                 </div>
@@ -74,19 +138,31 @@
                     role="region"
                     aria-labelledby="restaurantHeading"
                 >
-                    <h2 id="restaurantHeading">RESTAURANTS & BARS</h2>
+                    <h2 id="restaurantHeading">Restaurants & Bars</h2>
                     <ul>
                         {#each restaurantsBars as restaurant}
                             <div class=" liste_restaurants">
                                 <li>
-                                    {restaurant.name} - Tel. : {restaurant.tel}
+                                    <strong> {restaurant.name}</strong> <br /> -
+                                    Tel. :
+                                    <a
+                                        href="tel:{restaurant.tel}"
+                                        class="phone-number">{restaurant.tel}</a
+                                    >
                                 </li>
                                 {#if restaurant.address && restaurant.site}
                                     <li>
-                                        Adresse : {restaurant.address} | Site :
+                                        Adresse :
+                                        <address>{restaurant.address}</address>
+                                        | Site :
                                         <a
                                             href={restaurant.site}
-                                            target="_blank"
+                                            on:click|preventDefault={() =>
+                                                confirmRedirect(
+                                                    restaurant.site,
+                                                    restaurant.name,
+                                                )}
+                                            class="modalContent-more"
                                         >
                                             En savoir plus
                                         </a>
@@ -115,3 +191,15 @@
         </p>
     </div>
 </div>
+<!-- Boîte de dialogue personnalisée -->
+{#if dialogVisible}
+    <div class="customDialog">
+        <p>
+            Vous allez être redirigé vers un autre site. Voulez-vous continuer ?
+        </p>
+        <div class="buttonContainer">
+            <button class="confirmButton" on:click={proceedToSite}>Oui</button>
+            <button class="cancelButton" on:click={cancelRedirect}>Non</button>
+        </div>
+    </div>
+{/if}
