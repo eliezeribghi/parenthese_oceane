@@ -68,7 +68,7 @@
             </ul>
         </div>
         <div></div>
-        <img class="iframe" src="./src/assets/plan_page_info.jpg" alt="" />
+        <img class="iframe" src="./assets/plan_page_info.jpg" alt="" />
         <!-- <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750.6202475107857!2d-1.5500814055858558!3d46.41658455917107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480413710883840b%3A0xdc2e3f19f1cd9e15!2sGites%20Parenth%C3%A8se%20oc%C3%A9ane!5e0!3m2!1sfr!2sfr!4v1716994249499!5m2!1sfr!2sfr"
             width="600"
