@@ -7,7 +7,7 @@ const informations = [
       description: "Gîte de 100m² rénové, situé au rez-de-chaussée, au-dessus de la maison des propriétaires, sur un terrain de 3000m² comprenant 2 autres gîtes. <br/><br/> Accès au logement et parking privatifs.  Salon avec cheminée /séjour/cuisine ouverte. <br/><br/> Une terrasse privative, soigneusement aménagée avec un salon de jardin, offrant un espace extérieur.",
       roomComposition: [
         "1 lit (160x200)",
-        "2 lits jumelables (80x200)",
+        "2 lits (80x200)",
         "1 lit (180x200)",
       ],
       tarifs: [
