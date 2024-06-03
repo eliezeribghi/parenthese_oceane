@@ -105,7 +105,7 @@ iframe {
 .lieuxDeProximite {
     display: block;
     width: 100%;
-    padding-inline: 4em;
+    padding-inline: 2em;
     // margin-inline: 4em;
 
     .containerProximite{
@@ -185,6 +185,14 @@ a {
 
 /* Styles responsives */
 @include mixins.desktop {
+
+
+    .lieuxDeProximite{
+        padding-inline: 4em;
+    }
+
+
+
     .iframe {
         flex: 60%;
         max-width: 60%;
