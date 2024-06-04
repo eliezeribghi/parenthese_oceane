@@ -72,9 +72,11 @@ $carouselStart: 65px;
     /* Styles pour le conteneur du logo */
     .logo-container {
       position: relative;
-      max-width: 18em;
-      max-height: 18em;
+      max-width: 20em;
+      max-height: 20em;
       margin-inline: auto;
+      width:10em;
+      height: 10em;
       // position: relative;
       // border-radius: 50%;
    
@@ -101,6 +103,7 @@ $carouselStart: 65px;
           width: 100%;
           overflow: visible;
           z-index: 10;
+         
       }
    
     }
