@@ -126,6 +126,7 @@ iframe {
             flex-direction: row;
             flex-wrap: wrap;
             margin-bottom: 1em;
+            gap: 1em;
     
             h2 {
                 color: $primary;
@@ -136,18 +137,31 @@ iframe {
     
             .section_commerce,
             .section_restauration {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+                width: 100%;
                 ul {
                     text-align: start;
-                    margin: 1em;
-    
-                    .liste_commerces,
-                    .liste_restaurants {
-                        text-align: left;
-                        margin: 1em;
-                        text-wrap: balance;
+                    margin-block: auto;
+                    margin-inline: 1em;
+
+                    strong{
+                        display: block;
+                        margin-block-end: 5px;
+                    }   
+
+                    address{
+                        display: inline-block;
                     }
-    
-    
+
+                    span{
+                        font-weight: 500;
+                        font-size: .95em;
+                        color: rgb(41, 41, 41);
+                        font-style: oblique;
+                    }
+
                 }
     
             }
@@ -181,6 +195,11 @@ a {
 
 
     .custom-main {}
+
+    .section_commerce,
+    .section_restauration {
+        flex: calc(50% - .5em);
+    }
 }
 
 /* Styles responsives */
@@ -248,6 +267,11 @@ a {
     }
 
     .text_footer {
+    }
+
+    .section_commerce,
+    .section_restauration {
+        flex: calc(50% - .5em);
     }
 
 }

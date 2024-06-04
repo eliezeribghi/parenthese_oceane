@@ -96,42 +96,45 @@
                 >
                     <h2 id="commerceHeading">Commerces</h2>
 
-                    <ul>
-                        {#each commerces as commerce}
-                            <div class=" liste_commerces">
-                                <li>
-                                    <strong>
-                                        {commerce.name}
-                                    </strong> <br /> - Tel. :
-                                    <a
-                                        href="tel:{commerce.tel}"
-                                        class="phone-number">{commerce.tel}</a
-                                    >
-                                </li>
-                                {#if commerce.address}
-                                    <li>
-                                        <span>Adresse :</span>
-                                        <address>
-                                            {commerce.address}
-                                        </address>
-                                        {#if commerce.site}
-                                            <span> | Site : </span>
-                                            <a
-                                                href={commerce.site}
-                                                on:click|preventDefault={() =>
-                                                    confirmRedirect(
-                                                        commerce.site,
-                                                        commerce.name,
-                                                    )}
-                                                class="modalContent-more"
-                                                >En savoir plus</a
-                                            >
-                                        {/if}
-                                    </li>
-                                {/if}
-                            </div>
-                        {/each}
+                    {#each commerces as commerce}
+                    <ul class="lists-commerce">
+                        <strong>
+                            {commerce.name}
+                        </strong>
+                        <li class='list-tel'>
+                           <span>Tel. :</span>
+                            <a
+                                href="tel:{commerce.tel}"
+                                class="phone-number">{commerce.tel}</a
+                            >
+                        </li>
+
+                        {#if commerce.address}
+                            <li class='list-address'>
+                                <span>Adresse :</span>
+                                <address>
+                                    {commerce.address}
+                                </address>
+                            </li>
+                        {/if}
+
+                        {#if commerce.site}
+                            <li class='list-site'>
+                                <span>Site : </span>
+                                <a
+                                    href={commerce.site}
+                                    on:click|preventDefault={() =>
+                                        confirmRedirect(
+                                            commerce.site,
+                                            commerce.name,
+                                        )}
+                                    class="modalContent-more"
+                                    >En savoir plus</a
+                                >
+                            </li>
+                        {/if}
                     </ul>
+                    {/each}
                 </div>
                 <div
                     class="section_restauration"
@@ -139,38 +142,42 @@
                     aria-labelledby="restaurantHeading"
                 >
                     <h2 id="restaurantHeading">Restaurants & Bars</h2>
-                    <ul>
-                        {#each restaurantsBars as restaurant}
-                            <div class=" liste_restaurants">
-                                <li>
-                                    <strong> {restaurant.name}</strong> <br /> -
-                                    Tel. :
-                                    <a
-                                        href="tel:{restaurant.tel}"
-                                        class="phone-number">{restaurant.tel}</a
-                                    >
-                                </li>
-                                {#if restaurant.address && restaurant.site}
-                                    <li>
-                                        Adresse :
-                                        <address>{restaurant.address}</address>
-                                        | Site :
-                                        <a
-                                            href={restaurant.site}
-                                            on:click|preventDefault={() =>
-                                                confirmRedirect(
-                                                    restaurant.site,
-                                                    restaurant.name,
-                                                )}
-                                            class="modalContent-more"
-                                        >
-                                            En savoir plus
-                                        </a>
-                                    </li>
-                                {/if}
-                            </div>
-                        {/each}
+                    {#each restaurantsBars as restaurant}
+                    <ul  class="lists-restaurants">
+                        <strong> {restaurant.name}</strong>
+                        <li class='list-tel'>
+                            <span>Tel. :</span>
+                            <a
+                                href="tel:{restaurant.tel}"
+                                class="phone-number">{restaurant.tel}</a
+                            >
+                        </li>
+
+                        {#if restaurant.address}
+                            <li class='list-address'>
+                                <span>Adresse :</span>
+                                <address>{restaurant.address}</address>
+                            </li>
+                        {/if}
+                        
+                        {#if restaurant.site}
+                            <li class='list-site'>
+                                <span>Site : </span>
+                                <a
+                                    href={restaurant.site}
+                                    on:click|preventDefault={() =>
+                                        confirmRedirect(
+                                            restaurant.site,
+                                            restaurant.name,
+                                        )}
+                                    class="modalContent-more"
+                                >
+                                    En savoir plus
+                                </a>
+                            </li>
+                        {/if}
                     </ul>
+                    {/each}
                 </div>
             </div>
         </div>
