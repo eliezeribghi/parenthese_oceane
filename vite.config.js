@@ -60,20 +60,20 @@ export default defineConfig({
         theme_color: '#1e55b3',
         icons: [
           {
-            src: '/pwa-192x192.png',
+            src: '/pwa-192x192.webp',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/webp'
           },
           {
-            src: '/icon-maskable.png',
+            src: '/icon-maskable.webp',
             sizes: '512x512',
-            type: 'image/png',
+            type: 'image/webp',
             purpose: 'maskable'
           },
           {
-            src: '/pwa-144x144.png',
+            src: '/pwa-144x144.webp',
             sizes: '144x144',
-            type: 'image/png'
+            type: 'image/webp'
           }
         ]
       }

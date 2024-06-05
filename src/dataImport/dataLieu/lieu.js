@@ -11,7 +11,7 @@ const places = [
       image: 'images/maison-clemenceau.jpg',
       url: 'https://www.maison-de-clemenceau.fr/',
       alt: 'Description de l\'image 1',
-      src: './assets/imgLieu/lieu1.png',
+      src: './assets/imgLieu/lieu1.webp',
       name: 'Titre de l\'image 1'
     },
     {
@@ -23,7 +23,7 @@ const places = [
       image: 'images/eglise-saint-vincent.jpg',
       url: 'https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Vincent_de_Saint-Vincent-sur-Jard',
       alt: 'Description de l\'image 2',
-      src: './assets/imgLieu/lieu2.png',
+      src: './assets/imgLieu/lieu2.webp',
       name: 'Titre de l\'image 2'
     },
     {
@@ -35,7 +35,7 @@ const places = [
         image: "images/sentier-saint-vincent-sur-jard.jpg",
         url: "https://www.destination-vendeegrandlittoral.com/quoi-faire/balade/a-pied/circuit-de-la-pointe-du-payre/",
         alt: "Description de l'image 3",
-        src: "./assets/imgLieu/lieu3.png",
+        src: "./assets/imgLieu/lieu3.webp",
         name: "Titre de l'image 3"
     },
     {
@@ -47,7 +47,7 @@ const places = [
       image: 'images/plage-ragnette.jpg',
       url: 'https://www.destination-vendeegrandlittoral.com/quoi-faire/plages/',
       alt: 'Description de l\'image 4',
-      src: './assets/imgLieu/lieu4.png',
+      src: './assets/imgLieu/lieu4.webp',
       name: 'Titre de l\'image 2'
     }
   ];

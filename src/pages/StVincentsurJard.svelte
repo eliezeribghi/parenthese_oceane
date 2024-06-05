@@ -200,7 +200,7 @@ window.addEventListener("scroll", () => {
         histoire et de sa beauté naturelle.
         
       </p>
-      <img class="logoVendee" src="./assets/logo-vendee.png" alt="Logo de la Vendée">
+      <img class="logoVendee" src="./assets/logo-vendee.webp" alt="Logo de la Vendée">
 
   </article>
 

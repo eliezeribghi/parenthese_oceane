@@ -42,7 +42,7 @@
 <section class="sectionPageCottage" aria-labelledby="cottageHeading">
     <header>
         <div class="containerHeader">
-            <img class="imgHeader" src="./assets/imgBasse/basse1.png" alt="" />
+            <img class="imgHeader" src="./assets/imgBasse/basse1.webp" alt="" />
             <div class="texteImgHeader">{name}</div>
         </div>
     </header>

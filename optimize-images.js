@@ -4,7 +4,7 @@ import imageminPngquant from 'imagemin-pngquant';
 import imageminWebp from 'imagemin-webp';
 
 (async () => {
-    const files = await imagemin(['public/assets/**/*.{jpg,jpeg,png}'], {
+    const files = await imagemin(['public/assets/**/*.{jpg,jpeg,png,webp}'], {
         destination: 'output',
         plugins: [
             imageminMozjpeg({ quality: 75 }),
