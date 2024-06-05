@@ -53,7 +53,7 @@ export default defineConfig({
         name: 'Parenthese Oceane',
         short_name: 'Oceane',
         description: 'Site web pour le complexe de gîtes Parenthese Oceane à Saint Vincent sur Jard',
-        theme_color: '#ffffff',
+        theme_color: '#1e55b3',
         icons: [
           {
             src: '/pwa-192x192.png',

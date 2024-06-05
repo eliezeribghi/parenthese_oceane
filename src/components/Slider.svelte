@@ -1,5 +1,5 @@
 <script>
-  import { onMount, afterUpdate } from "svelte";
+  import { onMount, afterUpdate, onDestroy } from "svelte";
   import images from "../dataImport/+server";
   import '../style/components/slider.scss'
 
@@ -11,61 +11,52 @@
     currentImageIndex = (currentImageIndex + 1) % images.length;
   }
 
-  // Effectué après le montage du composant
-  onMount(() => {
-    calculateContainerWidth();
-
-    // Déclenche le changement d'image toutes les 5 secondes
-    const interval = setInterval(() => {
-      nextImage();
-      calculateContainerWidth();
-    }, 5000);
-
-    // Nettoie l'intervalle après la mise à jour du composant
-    return () => clearInterval(interval);
-  });
-
-  // Effectué après chaque mise à jour du composant
-  afterUpdate(() => {
-    calculateContainerWidth();
-  });
-
   // Fonction pour calculer la largeur du conteneur en fonction du nombre d'images
   function calculateContainerWidth() {
     containerWidth = images.length * window.innerWidth;
   }
+
+  // Déclenche le changement d'image toutes les 5 secondes
+  let interval;
+  onMount(() => {
+    calculateContainerWidth();
+    interval = setInterval(() => {
+      nextImage();
+    }, 5000);
+  });
+
+  // Nettoie l'intervalle et les écouteurs d'événements au démontage du composant
+  onDestroy(() => {
+    clearInterval(interval);
+  });
+
+  // Met à jour la largeur du conteneur après chaque mise à jour
+  afterUpdate(() => {
+    calculateContainerWidth();
+  });
 </script>
+
+<style>
+  /* Ajoutez ici les styles CSS nécessaires pour votre carousel */
+</style>
 
 <section class="carousel-container" aria-label="Carousel">
   <div class="text-container top-text">
-    <!-- En-tête du carousel -->
     <h1 id="carousel-heading" aria-label="Bienvenue à Saint Vincent sur Jard, Carousel">
       BIENVENUE <br /> A <br /> SAINT VINCENT SUR JARD
     </h1>
-
-    <!-- Conteneur du logo -->
     <div class="logo-container">
       <img class="logo-slide" src="./assets/logo.png" alt="Logo" loading="lazy" aria-roledescription="logo carousel parenthese oceane gite vendée"/>
     </div>
   </div>
 
-  <!-- Wrapper du carousel -->
-  <div
-    class="carousel-wrapper"
-    role="group"
-    aria-roledescription="image slider"
-    tabindex="-1"
-  >
-    <!-- Conteneur du carousel d'images -->
-    <div
-      class="image-carousel"
+  <div class="carousel-wrapper" role="group" aria-roledescription="image slider" tabindex="-1">
+    <div class="image-carousel"
       style={`transform: translateX(${-currentImageIndex * window.innerWidth}px); width: ${containerWidth}px`}
       role="listbox"
     >
       {#each images as { src, alt, title }, index}
-   
         <img
-      
           class="carousel-image"
           src={src}
           title={title}
