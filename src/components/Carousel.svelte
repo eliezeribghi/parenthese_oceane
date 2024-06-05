@@ -109,18 +109,22 @@
         </button>
         <button
             class={`next-button ${showButtons ? 'active' : ''}`}
-            on:click={nextImage}
+            on:click={nextImage} 
             aria-label="Image Suivante"
         >
         </button>
         <div class="indicators">
             {#each images as _, index}
-                <span
-                    class="indicator {currentIndex === index ? 'active' : ''}"
-                    on:click={() => goToImage(index)}
-                ></span>
+              <button
+                class={`indicator ${currentIndex === index ? 'active' : ''}`}
+                on:click={() => goToImage(index)}
+                aria-label={`Image ${index + 1}`}
+              >
+                <!-- Ajoutez ici une icône ou du texte pour représenter l'indicateur -->
+              </button>
             {/each}
-        </div>
+          </div>
+          
     </div>
 </section>
 

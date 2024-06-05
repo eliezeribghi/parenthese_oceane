@@ -249,7 +249,7 @@
     <h2 class="ratesTitle" id="tarifHeading">Tarifs</h2>
     <div class="tariffDetails">
         {#each tarifs as { label, amount, isBold, additionalInfo }, key (key)}
-            <p class="tariffItem" {key}>
+            <p class="tariffItem" >
                 {#if isBold}
                     {label} <span class="tariffAmount">{amount}</span>
                 {:else}

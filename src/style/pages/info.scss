@@ -67,7 +67,8 @@ iframe {
         color: #1e55b3;
         text-align: left;
 
-        ul{
+        ul {
+
             // width: 100%;
             li {
                 display: flex;
@@ -79,15 +80,15 @@ iframe {
                 list-style-position: inside;
                 align-items: center;
                 white-space: nowrap;
-    
-                span{
+
+                span {
                     font-variant: all-small-caps proportional-nums;
                 }
 
                 img {
                     margin-right: 1em;
                     width: 2em;
-    
+
                 }
             }
         }
@@ -108,17 +109,17 @@ iframe {
     padding-inline: 2em;
     // margin-inline: 4em;
 
-    .containerProximite{
+    .containerProximite {
         height: 100%;
         width: 100%;
         background-color: #1e55b313;
         padding: 2em;
 
-        #proximityHeading{
+        #proximityHeading {
             color: $primary;
             font-weight: 700;
         }
-    
+
         .flex-containerProximite {
             margin-top: 4em;
             display: flex;
@@ -127,35 +128,36 @@ iframe {
             flex-wrap: wrap;
             margin-bottom: 1em;
             gap: 1em;
-    
+
             h2 {
                 color: $primary;
                 text-decoration-line: underline;
                 font-size: 1.3em;
                 font-weight: 500;
             }
-    
+
             .section_commerce,
             .section_restauration {
                 display: flex;
                 flex-direction: column;
                 gap: 2em;
                 width: 100%;
+
                 ul {
                     text-align: start;
                     margin-block: auto;
                     margin-inline: 1em;
 
-                    strong{
+                    strong {
                         display: block;
                         margin-block-end: 5px;
-                    }   
+                    }
 
-                    address{
+                    address {
                         display: inline-block;
                     }
 
-                    span{
+                    span {
                         font-weight: 500;
                         font-size: .95em;
                         color: rgb(41, 41, 41);
@@ -163,12 +165,12 @@ iframe {
                     }
 
                 }
-    
+
             }
-    
+
         }
     }
-   
+
 }
 
 
@@ -183,7 +185,8 @@ a {
 
 .text_footer {
     margin-block: 2em;
-    p{
+
+    p {
         text-align: center;
         width: calc(100% - 15vw);
         margin-inline: auto;
@@ -193,8 +196,6 @@ a {
 @include mixins.tablet {
 
 
-
-    .custom-main {}
 
     .section_commerce,
     .section_restauration {
@@ -206,7 +207,7 @@ a {
 @include mixins.desktop {
 
 
-    .lieuxDeProximite{
+    .lieuxDeProximite {
         padding-inline: 4em;
     }
 
@@ -246,28 +247,24 @@ a {
     iframe {
         flex: 40%;
         max-width: 40%;
-        // width: 50%;
-        // min-height: 30em;
-        // min-width: 30em;
+     
     }
 
     .instructions {
-        // display: flex;
-        // flex-direction: column;
-        // display: grid;
-        // width: 50%;
-        h2{
+
+     
+        h2 {
             height: 100%;
             margin-bottom: auto;
         }
-        ul{
+
+        ul {
             display: block;
             height: 100%;
         }
     }
 
-    .text_footer {
-    }
+
 
     .section_commerce,
     .section_restauration {

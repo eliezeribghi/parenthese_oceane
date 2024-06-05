@@ -2,20 +2,6 @@
 @use "../utils/mixins";
 
 /* Styles spécifiques pour les écrans de petite taille */
-@media screen and (max-width: 760px) {
-
-   /*  // .descriptionTitle,
-    // // .carouselDesktop,
-    // .iconDesktop {
-    //     display: none;
-    // } */
-   
-}
-
-
-@media only screen and (min-width: 768px) {
-   
-  }
 
 
 .room-composition h2,
@@ -27,7 +13,7 @@
     font-weight: 600;
 }
 
-.squareService h2{
+.squareService h2 {
     color: $primary-light;
     margin-block-start: 1em;
 }
@@ -37,7 +23,7 @@
     position: relative;
     height: calc(100vh - 66px);
 
-    &::before{
+    &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -64,7 +50,7 @@
     margin-top: 0;
     z-index: 10;
 
-    &::before{
+    &::before {
         content: '';
         position: absolute;
         bottom: -.15em;
@@ -119,20 +105,17 @@
 /* Description */
 .description {
     max-width: 1500px;
-    // padding: 10%;
+
     height: auto;
-    // margin-bottom: 10%;
+
     text-align: center;
 }
 
-/* Titre de la description pour les appareils mobiles */
-// .descriptionTitleMobile {
-//     margin: 10%;
-// }
 
-.equipment{
+.equipment {
     margin-block-end: 3em;
-    .outdoor-equipment{
+
+    .outdoor-equipment {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -154,33 +137,30 @@
     margin-block-end: 2em;
     margin-inline: auto;
     padding-inline: 2em;
-    // border: solid $primary 16px;
-    // padding: 10%;
 
-    h1{
+
+    h1 {
         width: 100%;
     }
-    
-    .wrapperSection{
+
+    .wrapperSection {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         border: solid $primary min(calc(1px + 2vw), 16px);
         padding: 2em;
         margin-inline: 5vw;
-        // width: 100%;
 
-        h2{
+
+        h2 {
             color: $primary;
             font-weight: 600;
         }
 
         .Compositions-section,
-        .equipements-section{
+        .equipements-section {
 
-            .equipements, 
-            .room-composition{
+            .equipements,
+            .room-composition {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
@@ -194,19 +174,21 @@
     .carouselDesktop,
     .iconDesktop,
     .Compositions-section,
-    .equipements-section{
+    .equipements-section {
         flex: 1 calc(50% - 2rem);
     }
 
-    .iconDesktop{
-        .sectionIcon{
-            
-            .icon-section{
+    .iconDesktop {
+        .sectionIcon {
+
+            .icon-section {
                 display: flex;
                 gap: 1em;
-                .icon-wrapper{
+
+                .icon-wrapper {
                     margin: 0;
-                    img{
+
+                    img {
                         display: block;
                         margin-inline: auto;
                     }
@@ -214,26 +196,28 @@
             }
         }
 
-        .container-text{
+        .container-text {
             margin-block-start: 3em;
             max-width: calc(100% - 5vw);
             margin-inline: auto;
         }
     }
 
-    .Compositions-section{
+    .Compositions-section {
         order: 3;
-        .room-composition{
 
-            .chambre{
+        .room-composition {
+
+            .chambre {
                 text-align: left;
                 font-size: .8rem;
                 padding-left: 2em;
                 // list-style: circle;
 
-                li{ 
+                li {
                     padding: .5em;
-                    &::before{
+
+                    &::before {
                         content: '•';
                         display: inline-block;
                         width: 1em;
@@ -241,11 +225,11 @@
                         color: $primary;
                     }
 
-                    &:not(:last-child){
+                    &:not(:last-child) {
                         margin-block-end: 1em;
                     }
 
-                    span{
+                    span {
                         color: #6c6c6c;
                         // font-style: italic;
                         font-size: .8rem;
@@ -256,33 +240,36 @@
         }
     }
 
-    .equipements-section{
+    .equipements-section {
         order: 4;
-        .equipements{
-            ul{
+
+        .equipements {
+            ul {
                 display: grid;
                 // width: fit-content;
                 gap: 1em;
-                grid-template-columns: repeat(auto , 1fr);
-           
-               min-width: 80%;
-                @media screen and (min-width: 478px){
-                    grid-template-columns: repeat(2 , 1fr);
-                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
+                grid-template-columns: repeat(auto, 1fr);
+
+                min-width: 80%;
+
+                @media screen and (min-width: 478px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    ;
                 }
 
-                @media screen and (min-width: 478px) and (max-width: 1024px){
+                @media screen and (min-width: 478px) and (max-width: 1024px) {
                     width: 100%;
                 }
 
-                li{
+                li {
                     align-items: center;
                     padding: .5em;
-                    width:auto;
+                    width: auto;
                     column-gap: .5rem;
                     // white-space: nowrap;
 
-                    img{
+                    img {
                         justify-content: right;
                         min-width: 40px;
                         height: 30px;
@@ -290,7 +277,7 @@
                         // flex: 1;
                     }
 
-                    span{
+                    span {
                         margin-right: auto;
                         width: fit-content;
                         white-space: nowrap;
@@ -302,23 +289,23 @@
         }
     }
 
-    .carouselDesktop{
+    .carouselDesktop {
         position: relative;
-       max-width: 100%;
-       height: fit-content;
-       margin-block: auto;
-       margin-inline: auto;
-       width: calc(100% - 10vw);
-       max-width: 700px;
+        max-width: 100%;
+        height: fit-content;
+        margin-block: auto;
+        margin-inline: auto;
+        width: calc(100% - 10vw);
+        max-width: 700px;
     }
 
-    .descriptionTitleMobile{
+    .descriptionTitleMobile {
         text-align: center;
         margin-inline: auto;
         font-weight: 800;
         font-size: 1.5em;
 
-        &#cottageDescHeading{
+        &#cottageDescHeading {
             margin-block-end: 1em;
             margin-inline: 0;
         }
@@ -328,7 +315,7 @@
 /* Composition des chambres */
 .room-composition,
 .equipements {
-    // margin-bottom: 22px;
+
     text-align: justify;
 }
 
@@ -336,7 +323,7 @@
 
 /* Éléments des équipements */
 .equipement-item {
-    // margin-bottom: 1em;
+
     display: flex;
     font-size: 0.8rem;
 }
@@ -430,7 +417,7 @@ ul {
     height: 50em;
 }
 
-/* Équipement extérieur */
+
 
 
 /* Titre de l'équipement extérieur */
@@ -463,8 +450,9 @@ ul {
 
 
 }
+
 .outdoor-equipment li.animate {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Icône de l'équipement */
@@ -522,7 +510,7 @@ ul {
     color: #888;
 }
 
-.container-text{
+.container-text {
     font-size: small;
     margin-block-start: 2em;
     line-height: 1.2rem;
@@ -530,8 +518,8 @@ ul {
 
 
 @include mixins.tablet {
-  
-  
+
+
 
     /* Styles de la navigation dans la section de la page du cottage */
     .sectionPageCottage nav {
@@ -554,43 +542,47 @@ ul {
     }
 
     /* Réglages pour la liste d'équipement */
-    .equipement-list {
-        // grid-template-columns: repeat(3, 1fr);
-    }
+  
 
 }
- .desktopText{
-        display: none;
-            }
+
+.desktopText {
+    display: none;
+}
+
 @include mixins.desktop {
     .mobilText {
         display: none;
-      }
-      .desktopText{
+    }
+
+    .desktopText {
         display: block;
-            }
-    .equipements-section{
-        .equipements{
-            ul{
-                grid-template-columns: repeat(2 , 1fr);
+    }
+
+    .equipements-section {
+        .equipements {
+            ul {
+                grid-template-columns: repeat(2, 1fr);
                 grid-auto-flow: row;
 
-                li{
+                li {
                     column-gap: .5rem;
                 }
             }
         }
     }
-    .iconDesktop h2{
+
+    .iconDesktop h2 {
         margin-top: 2.5em;
         color: $primary;
         font-weight: 600;
 
-    }  
-    .squareDescription{
+    }
+
+    .squareDescription {
         flex-flow: row wrap;
 
-        .wrapperSection{
+        .wrapperSection {
             flex-direction: row;
             border: 0;
             padding: 0;
@@ -599,20 +591,20 @@ ul {
             width: 100%;
             // gap: 2em;
 
-            .equipements-section{
+            .equipements-section {
                 margin-right: 2em;
             }
         }
 
-        .Compositions-section, 
-        .equipements-section{
+        .Compositions-section,
+        .equipements-section {
             order: inherit;
 
-            ul{
+            ul {
                 margin-inline: auto;
                 padding-inline: 2em;
                 // background-color: rgb(243, 243, 243);
-                background-color:#cddfff1f;
+                background-color: #cddfff1f;
                 box-shadow: 0 0 3px 1px #9ec2ff34;
                 border-radius: 3px;
                 width: 100%;
@@ -626,26 +618,19 @@ ul {
         display: none;
     }
 
-    /* Styles pour le carousel sur les appareils mobiles */
-    // .carouselMobile {
-    //     display: none;
-    // }
 
     /* Styles pour la section principale */
     .description {
         margin: 0% 15em 0 15em;
-        min-width: 1040px ;
+        min-width: 1040px;
         min-height: 950px;
     }
 
-    /* Styles pour le titre de la description sur les appareils mobiles */
-    // .descriptionTitleMobile {
-    //     display: none;
-    // }
+
 
     /* Réglages pour le conteneur de l'en-tête */
     .containerHeader {
-        .texteImgHeader{
+        .texteImgHeader {
             left: 2em;
         }
     }
@@ -660,11 +645,6 @@ ul {
         font-weight: lighter;
     }
 
-    /* Styles pour les liens de navigation */
-    // .navigationLinks a {
-    //     padding: 1em 2em;
-    //     font-size: 1.3em;
-    // }
 
     /* Réglages pour la description */
     .description {
@@ -673,7 +653,7 @@ ul {
         text-align: start;
         // margin-top: 5%;
     }
-    
+
 
     /* Styles pour le contenu de la description */
     .container-text {
@@ -682,7 +662,6 @@ ul {
         width: 100%;
         margin: 0;
         max-width: inherit;
-        // padding: 0 0 3em;
         letter-spacing: 1;
     }
 
@@ -694,9 +673,9 @@ ul {
     }
 
     /* Styles pour le titre des chambres */
-   
 
-  
+
+
     /* Styles pour les images des équipements */
     .equipements-img {
         width: 5%;
@@ -716,21 +695,20 @@ ul {
         border: initial;
     }
 
-  .squareService h2{
-    // margin: 2%;
-  }
 
     /* Styles pour la liste des services */
     .serviceList {
-      
+
         list-style: none;
         padding: 1%;
     }
-.squareService h2{
 
-    color: $primary;
-   
-}
+    .squareService h2 {
+
+        color: $primary;
+
+    }
+
     /* Styles pour les éléments de la liste des services */
     .serviceList li {
         text-align: center;
@@ -753,7 +731,7 @@ ul {
     /* Styles pour l'équipement extérieur */
     .outdoor-equipment {
         padding: 0 30% 0 30%;
-  
-    
+
+
     }
 }

@@ -1,6 +1,20 @@
 <script>
 
 import { places } from "../dataImport/dataLieu/lieu.js";
+// Supprimez l'import de 'places'
+
+// Déclarez une variable locale pour stocker les données
+let placesData = [];
+
+function setPlaces(data) {
+  placesData = data; // Mettez à jour les données locales
+}
+
+function cacheData(data) {
+  // Stockez les données en cache ici
+  // Par exemple, vous pouvez les stocker dans localStorage ou sessionStorage
+  localStorage.setItem('placesData', JSON.stringify(data));
+}
 
 let showModal = false;
 let modalContent = {
@@ -16,7 +30,7 @@ let modalContent = {
 };
 
 function fetchData() {
-  fetch('../dataImport/dataLieu/lieu.json') // Remplacez le chemin par le chemin réel de votre fichier lieu.json
+  fetch('../dataImport/dataLieu/lieu.json') 
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des données');
@@ -24,21 +38,15 @@ function fetchData() {
       return response.json();
     })
     .then(data => {
-      // Traitez les données récupérées
       console.log('Données des lieux récupérées :', data);
-      // Mettez à jour votre variable places avec les données récupérées en utilisant setPlaces
-      setPlaces(data);
-      // Vous n'avez plus besoin de réaffecter places ici
-      // Stockez les données en cache
-      cacheData();
+      setPlaces(data); // Met à jour les données des lieux
+      cacheData(data);
     })
     .catch(error => {
       console.error('Erreur :', error);
     });
 }
 
-
-// Appel de fetchData lorsque la page est chargée
 window.addEventListener('load', () => {
   fetchData();
 });
@@ -57,17 +65,21 @@ function handleScroll() {
   const elements = document.querySelectorAll(".scroll-animation");
 
   elements.forEach((element) => {
-    const elementPosition = element.offsetTop;
-    const elementHeight = element.offsetHeight;
-    const startToShow = elementPosition - windowHeight + 10;
+    // Vérifie si l'élément est de type HTMLElement
+    if (element instanceof HTMLElement) {
+      const elementPosition = element.offsetTop;
+      const elementHeight = element.offsetHeight;
+      const startToShow = elementPosition - windowHeight + 10;
 
-    if (scrollPosition > startToShow) {
-      element.classList.add("show");
-    } else {
-      element.classList.remove("show");
+      if (scrollPosition > startToShow) {
+        element.classList.add("show");
+      } else {
+        element.classList.remove("show");
+      }
     }
   });
 }
+
 
 function handleScrollAppear() {
   const boutonScroll = document.getElementById('boutonScroll');
@@ -80,14 +92,19 @@ function handleScrollAppear() {
 function scrollToFirstSection() {
   const section = document.querySelector('.sectionTexteLieu');
   const boutonScroll = document.getElementById('boutonScroll');
-  if (section) {
-    window.scrollTo({
-      top: section.offsetTop,
-      behavior: 'smooth'
-    });
-    boutonScroll.style.display = 'none';
+  if (section instanceof HTMLElement && boutonScroll instanceof HTMLElement) {
+    // Vérifie si 'section' et 'boutonScroll' sont bien des éléments HTMLElement
+    const sectionOffsetTop = section.offsetTop; // Assurez-vous que TypeScript reconnaît 'offsetTop'
+    if (!isNaN(sectionOffsetTop)) {
+      window.scrollTo({
+        top: sectionOffsetTop,
+        behavior: 'smooth'
+      });
+      boutonScroll.style.display = 'none';
+    }
   }
 }
+
 
 const openModal = (content) => {
   modalContent = { ...content }; // Utilisation de la déstructuration pour éviter les mutations directes
@@ -212,6 +229,7 @@ window.addEventListener("scroll", () => {
         <h2>{place.title}</h2>
         <p>{place.description.substring(0, 100)}...</p>
         <!-- Ajout de la gestion des événements clavier pour l'accessibilité -->
+        <!-- svelte-ignore a11y-invalid-attribute -->
         <a
           class="linkPlace"
           href="javascript:void(0)"
