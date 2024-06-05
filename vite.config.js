@@ -67,7 +67,8 @@ export default defineConfig({
           {
             src: '/icon-maskable.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'maskable'
           },
           {
             src: '/pwa-144x144.png',
