@@ -46,7 +46,7 @@
       BIENVENUE <br /> A <br /> SAINT VINCENT SUR JARD
     </h1>
     <div class="logo-container">
-      <img class="logo-slide" src="./assets/logo.png" alt="Logo" loading="lazy" aria-roledescription="logo carousel parenthese oceane gite vendée"/>
+      <img class="logo-slide" src="./assets/logo.webp" alt="Logo" loading="lazy" aria-roledescription="logo carousel parenthese oceane gite vendée"/>
     </div>
   </div>
 
