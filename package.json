@@ -13,6 +13,10 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@svelteuidev/core": "^0.15.4",
+    "imagemin": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
     "svelte": "^4.2.12",
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
@@ -24,6 +28,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lazysizes": "^5.3.2",
     "npm": "^10.5.1",
     "sass": "^1.74.1",
     "svelte-routing": "^2.12.0",
