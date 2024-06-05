@@ -2,16 +2,26 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import compression from "vite-plugin-compression";
-import imageminPlugin from 'vite-plugin-imagemin'; // Import du plugin
+import imageminPlugin from 'vite-plugin-imagemin';
+import { VitePWA } from 'vite-plugin-pwa'; // Import du plugin PWA
 
 export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: true,
+    cssCodeSplit: true,
     rollupOptions: {
       input: {
         main: './index.html',
+      },
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        }
       },
       plugins: [
         compression({
@@ -34,5 +44,29 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [svelte()],
+  plugins: [
+    svelte(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'robots.txt', 'sitemap.xml'],
+      manifest: {
+        name: 'Parenthese Oceane',
+        short_name: 'Oceane',
+        description: 'Site web pour le complexe de gîtes Parenthese Oceane à Saint Vincent sur Jard',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
+    })
+  ]
 });
