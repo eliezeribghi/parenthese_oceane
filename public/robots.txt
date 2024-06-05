@@ -1,0 +1,17 @@
+# Autoriser tous les robots à accéder à tout le site
+User-agent: *
+Allow: /
+
+# Bloquer les accès aux fichiers sensibles ou non pertinents (si nécessaire)
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /confidential/
+
+# Bloquer les accès à des fichiers spécifiques (si nécessaire)
+User-agent: *
+Disallow: /secret.html
+Disallow: /hidden/
+
+# Spécifier le chemin du sitemap
+Sitemap: https://parentheseoceane.com/sitemap.xml
