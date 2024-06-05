@@ -86,7 +86,7 @@ const handleSubmit = async () => {
 <section class="from-section">
   <div class="header-contact">
     <div class="section-logo">
-      <img class="logo-header" src="./assets/logo.png" alt="" />
+      <img class="logo-header" src="./assets/logo.webp" alt="" />
     </div>
     <h1 class="title-header">Contactez-nous</h1>
     <p class="text-header">
