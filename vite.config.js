@@ -56,7 +56,7 @@ export default defineConfig({
       manifest: {
         name: 'Parenthese Oceane',
         short_name: 'Oceane',
-        description: 'Site web pour le complexe de gîtes Parenthese Oceane à Saint Vincent sur Jard',
+        "description": "Location de gîtes en Vendée : Découvrez Parenthese Oceane à Saint Vincent sur Jard. Nos gîtes confortables et bien équipés sont parfaits pour des vacances inoubliables en Vendée. Profitez de la tranquillité, du charme et de la beauté naturelle de la région tout en séjournant dans notre complexe idéalement situé. Explorez les plages, les sites historiques et les attractions touristiques de la Vendée depuis nos gîtes.",
         theme_color: '#1e55b3',
         icons: [
           {
