@@ -50,11 +50,13 @@
     </div>
   </div>
 
-  <div class="carousel-wrapper" role="group" aria-roledescription="image slider" tabindex="-1">
-    <div class="image-carousel"
-      style={`transform: translateX(${-currentImageIndex * window.innerWidth}px); width: ${containerWidth}px`}
-      role="listbox"
-    >
+  <div class="carousel-wrapper" role="region" aria-labelledby="carousel-heading">
+    <h2 id="carousel-heading" class="visually-hidden">Image Slider</h2>
+    <div class="image-carousel" 
+         style={`transform: translateX(${-currentImageIndex * window.innerWidth}px); width: ${containerWidth}px`} 
+         role="group" 
+         aria-roledescription="carousel">
+  
       {#each images as { src, alt, title }, index}
         <img
           class="carousel-image"
@@ -64,7 +66,7 @@
           sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
           alt={`Image ${index + 1}: ${alt}`}
           role="presentation"
-          aria-roledescription="carousel image de gites vendée"
+          aria-roledescription="carousel image des gites location vendée de "
           aria-hidden={index !== currentImageIndex}
           aria-labelledby="carousel-heading"
           tabindex="-1"
