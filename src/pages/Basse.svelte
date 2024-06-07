@@ -55,7 +55,7 @@
             <img
                 class="imgHeader"
                 src="./assets/imgBasse/basse1.webp"
-                alt=""
+                alt="represent le gite haute"
                 loading="lazy"
             />
             <div class="texteImgHeader">{name}</div>

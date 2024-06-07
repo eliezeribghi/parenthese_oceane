@@ -73,7 +73,7 @@
             <img
                 class="imgHeader"
                 src="./assets/imgHaute/haute.webp"
-                alt=""
+                alt="representation du gite haute"
                 loading="lazy"
             />
             <div class="texteImgHeader">{name}</div>

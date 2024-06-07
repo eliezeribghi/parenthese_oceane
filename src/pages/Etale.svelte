@@ -57,7 +57,7 @@
             <img
                 class="imgHeader"
                 src="./assets/imgEtale/etale1.webp"
-                alt=""
+                alt="represente le gite etale"
                 loading="lazy"
             />
             <div class="texteImgHeader">{name}</div>
