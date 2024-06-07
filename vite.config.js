@@ -1,7 +1,6 @@
 // Ce fichier Vite config remplace les propriétés du manifeste de l'application Web
 // Assurez-vous de définir toutes les configurations nécessaires ici pour l'apparence et le comportement de votre application Web.
 
-
 import path from 'path';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
@@ -56,7 +55,7 @@ export default defineConfig({
       manifest: {
         name: 'Parenthese Oceane',
         short_name: 'Oceane',
-        "description": "Location de gîtes en Vendée : Découvrez Parenthese Oceane à Saint Vincent sur Jard. Nos gîtes confortables et bien équipés sont parfaits pour des vacances inoubliables en Vendée. Profitez de la tranquillité, du charme et de la beauté naturelle de la région tout en séjournant dans notre complexe idéalement situé. Explorez les plages, les sites historiques et les attractions touristiques de la Vendée depuis nos gîtes.",
+        description: "Location de gîtes en Vendée : Découvrez Parenthese Oceane à Saint Vincent sur Jard. Nos gîtes confortables et bien équipés sont parfaits pour des vacances inoubliables en Vendée. Profitez de la tranquillité, du charme et de la beauté naturelle de la région tout en séjournant dans notre complexe idéalement situé. Explorez les plages, les sites historiques et les attractions touristiques de la Vendée depuis nos gîtes.",
         theme_color: '#1e55b3',
         icons: [
           {
@@ -75,7 +74,16 @@ export default defineConfig({
             sizes: '144x144',
             type: 'image/png'
           }
-        ]
+        ],
+        "og:title": "Parenthese Oceane - Gîtes de Charme en Vendée | Vacances à Saint Vincent sur Jard",
+        "og:description": "Découvrez notre site de location de gîtes en Vendée pour des vacances inoubliables. Explorez nos hébergements, consultez nos tarifs compétitifs et trouvez toutes les informations légales dont vous avez besoin. Réservez dès maintenant et vivez des moments de détente et de plaisir au cœur de la nature vendéenne.",
+        "og:image": "https://www.parentheseoceane.com/favicon.svg",
+        "og:url": "https://www.parentheseoceane.com",
+        "og:type": "website",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Parenthese Oceane - Gîtes de Charme en Vendée | Vacances à Saint Vincent sur Jard",
+        "twitter:description": "Découvrez notre site de location de gîtes en Vendée pour des vacances inoubliables. Explorez nos hébergements, consultez nos tarifs compétitifs et trouvez toutes les informations légales dont vous avez besoin. Réservez dès maintenant et vivez des moments de détente et de plaisir au cœur de la nature vendéenne.",
+        "twitter:image": "https://www.parentheseoceane.com/favicon.svg"
       }
     })
   ]
