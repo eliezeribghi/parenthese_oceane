@@ -119,6 +119,7 @@
       <Burger
         class="burgerMenu"
         style="background-color:$primary-light;"
+        aria-label="Ouvrir le menu"
         {opened}
       />
     </div>
