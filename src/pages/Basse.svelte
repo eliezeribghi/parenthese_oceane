@@ -5,21 +5,31 @@
     import Icon from "../components/Icon.svelte";
     import Carousel from "../components/Carousel.svelte";
     import { images } from "../dataImport/dataBasse/imgBasse";
-    import { myAccommodation, tarifs, combinedData } from "../dataImport/dataBasse/informationBasse";
+    import {
+        myAccommodation,
+        tarifs,
+        combinedData,
+    } from "../dataImport/dataBasse/informationBasse";
 
     const [{ svgPaths }] = myAccommodation;
-    const cottage = combinedData.find(item => item.title === "Gîte 2 pièces");
+    const cottage = combinedData.find((item) => item.title === "Gîte 2 pièces");
     let { name, title, description, roomComposition } = cottage;
 
     function getClassName(id) {
         return `iconEquipement ${
-            id === 1 ? "barbecue" :
-            id === 2 ? "private-parking" :
-            id === 3 ? "shared-garden" :
-            id === 4 ? "lounger-chair" :
-            id === 5 ? "patio-furniture" :
-            id === 6 ? "private-terrace" :
-            ""
+            id === 1
+                ? "barbecue"
+                : id === 2
+                  ? "private-parking"
+                  : id === 3
+                    ? "shared-garden"
+                    : id === 4
+                      ? "lounger-chair"
+                      : id === 5
+                        ? "patio-furniture"
+                        : id === 6
+                          ? "private-terrace"
+                          : ""
         }`;
     }
 
@@ -42,7 +52,12 @@
 <section class="sectionPageCottage" aria-labelledby="cottageHeading">
     <header>
         <div class="containerHeader">
-            <img class="imgHeader" src="./assets/imgBasse/basse1.webp" alt="" />
+            <img
+                class="imgHeader"
+                src="./assets/imgBasse/basse1.webp"
+                alt=""
+                loading="lazy"
+            />
             <div class="texteImgHeader">{name}</div>
         </div>
     </header>
@@ -54,8 +69,8 @@
             data-section="cottageDescription"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Description du gîte"
-        >DESCRIPTION</a>
+            aria-label="Aller à la section Description du gîte">DESCRIPTION</a
+        >
         <a
             href="#equipmentOutdoor"
             tabindex="0"
@@ -63,36 +78,43 @@
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
             aria-label="Aller à la section Équipement extérieur du gîte"
-        >ÉQUIPEMENT</a>
+            >ÉQUIPEMENT</a
+        >
         <a
             href="#service"
             tabindex="0"
             data-section="service"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Services du gîte"
-        >SERVICES</a>
+            aria-label="Aller à la section Services du gîte">SERVICES</a
+        >
         <a
             href="#tarif"
             tabindex="0"
             data-section="tarif"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Tarifs du gîte"
-        >TARIFS</a>
+            aria-label="Aller à la section Tarifs du gîte">TARIFS</a
+        >
     </nav>
 </section>
 
 <section class="sectionMain" aria-labelledby="cottageDescHeading">
     <div class="description">
         <div class="squareDescription">
-            <h1 class="descriptionTitleMobile" id="cottageDescHeading">{title}</h1>
+            <h1 class="descriptionTitleMobile" id="cottageDescHeading">
+                {title}
+            </h1>
 
             <section class="carouselDesktop">
                 <Carousel {images} />
             </section>
 
-            <section id="cottageDescription" class="iconDesktop" role="presentation">
+            <section
+                id="cottageDescription"
+                class="iconDesktop"
+                role="presentation"
+            >
                 <Icon {myAccommodation} />
                 <h2 class="title_texte desktopText">{name}</h2>
                 <p class="container-text desktopText">
@@ -125,13 +147,19 @@
                 </section>
 
                 <section id="roomComposition" class="Compositions-section">
-                    <div class="room-composition" aria-labelledby="roomCompositionHeading">
+                    <div
+                        class="room-composition"
+                        aria-labelledby="roomCompositionHeading"
+                    >
                         <h2 class="roomH2">Composition des chambres</h2>
                         <ul class="chambre">
                             {#each roomComposition as room}
                                 <li>
                                     {#if room.match(/\(([^)]+)\)/)}
-                                        {@html room.replace(/\(([^)]+)\)/, '<span class="bed-size">($1)</span>')}
+                                        {@html room.replace(
+                                            /\(([^)]+)\)/,
+                                            '<span class="bed-size">($1)</span>',
+                                        )}
                                     {:else}
                                         {room}
                                     {/if}
@@ -145,7 +173,11 @@
     </div>
 </section>
 
-<section id="equipmentOutdoor" class="equipment" aria-labelledby="equipOutdoorHeading">
+<section
+    id="equipmentOutdoor"
+    class="equipment"
+    aria-labelledby="equipOutdoorHeading"
+>
     <div class="outdoor-equipment">
         <h2 class="outdoorH2" id="equipOutdoorHeading">Équipement extérieur</h2>
         <ul class="equipement-list">
@@ -166,7 +198,9 @@
             <li aria-label="Animaux gratuits">Animaux acceptés</li>
             <li aria-label="Linge de maison fourni">Linge de maison fourni</li>
             <li aria-label="Lits faits à l'arrivée">Lits faits à l'arrivée</li>
-            <li aria-label="Ménage fin de séjour en option*">Ménage fin de séjour en option*</li>
+            <li aria-label="Ménage fin de séjour en option*">
+                Ménage fin de séjour en option*
+            </li>
         </ul>
     </div>
 </section>

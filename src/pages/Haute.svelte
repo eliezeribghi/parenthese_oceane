@@ -74,6 +74,7 @@
                 class="imgHeader"
                 src="./assets/imgHaute/haute.webp"
                 alt=""
+                loading="lazy"
             />
             <div class="texteImgHeader">{name}</div>
         </div>

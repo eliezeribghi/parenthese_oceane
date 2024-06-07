@@ -21,16 +21,16 @@
             id === 1
                 ? "barbecue"
                 : id === 2
-                ? "private-parking"
-                : id === 3
-                ? "shared-garden"
-                : id === 4
-                ? "lounger-chair"
-                : id === 5
-                ? "patio-furniture"
-                : id === 6
-                ? "private-terrace"
-                : ""
+                  ? "private-parking"
+                  : id === 3
+                    ? "shared-garden"
+                    : id === 4
+                      ? "lounger-chair"
+                      : id === 5
+                        ? "patio-furniture"
+                        : id === 6
+                          ? "private-terrace"
+                          : ""
         }`;
     }
 
@@ -54,7 +54,12 @@
 <section class="sectionPageCottage" aria-labelledby="cottageHeading">
     <header>
         <div class="containerHeader">
-            <img class="imgHeader" src="./assets/imgEtale/etale1.webp" alt="" />
+            <img
+                class="imgHeader"
+                src="./assets/imgEtale/etale1.webp"
+                alt=""
+                loading="lazy"
+            />
             <div class="texteImgHeader">{name}</div>
         </div>
     </header>
@@ -66,28 +71,33 @@
             data-section="cottageDescription"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Description du gîte">DESCRIPTION</a>
+            aria-label="Aller à la section Description du gîte">DESCRIPTION</a
+        >
         <a
             href="#equipmentOutdoorSection"
             tabindex="0"
             data-section="equipmentOutdoorSection"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Équipement extérieur du gîte">ÉQUIPEMENT</a>
+            aria-label="Aller à la section Équipement extérieur du gîte"
+            >ÉQUIPEMENT</a
+        >
         <a
             href="#service"
             tabindex="0"
             data-section="service"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Services du gîte">SERVICES</a>
+            aria-label="Aller à la section Services du gîte">SERVICES</a
+        >
         <a
             href="#tarif"
             tabindex="0"
             data-section="tarif"
             on:click={scrollToSection}
             on:keydown={handleKeyDown}
-            aria-label="Aller à la section Tarifs du gîte">TARIFS</a>
+            aria-label="Aller à la section Tarifs du gîte">TARIFS</a
+        >
     </nav>
 </section>
 
@@ -102,16 +112,20 @@
                 <Carousel {images} />
             </section>
 
-            <section id="cottageDescription" class="iconDesktop" role="presentation">
+            <section
+                id="cottageDescription"
+                class="iconDesktop"
+                role="presentation"
+            >
                 <Icon {myAccommodation} />
-                <h2 class="title_texte desktopText">{name}</h2> 
+                <h2 class="title_texte desktopText">{name}</h2>
                 <p class="container-text desktopText">
                     {@html description}
                 </p>
             </section>
 
             <div class="wrapperSection">
-                <h2 class="mobilText">{name}</h2> 
+                <h2 class="mobilText">{name}</h2>
                 <p class="container-text mobilText">
                     {@html description}
                 </p>
@@ -124,7 +138,6 @@
                                     <img
                                         class="equipements-img"
                                         src={equipement.image}
-                                      
                                         alt={`Image de ${equipement.nom}`}
                                     />
                                     <span>{equipement.nom}</span>
@@ -135,13 +148,19 @@
                 </section>
 
                 <section id="roomComposition" class="Compositions-section">
-                    <div class="room-composition" aria-labelledby="roomCompositionHeading">
+                    <div
+                        class="room-composition"
+                        aria-labelledby="roomCompositionHeading"
+                    >
                         <h2 class="roomH2">Composition des chambres</h2>
                         <ul class="chambre">
                             {#each roomComposition as room}
                                 <li>
                                     {#if room.match(/\(([^)]+)\)/)}
-                                        {@html room.replace(/\(([^)]+)\)/, '<span class="bed-size">($1)</span>')}
+                                        {@html room.replace(
+                                            /\(([^)]+)\)/,
+                                            '<span class="bed-size">($1)</span>',
+                                        )}
                                     {:else}
                                         {room}
                                     {/if}
@@ -155,7 +174,11 @@
     </div>
 </section>
 
-<section id="equipmentOutdoorSection" class="equipment" aria-labelledby="equipOutdoorHeading">
+<section
+    id="equipmentOutdoorSection"
+    class="equipment"
+    aria-labelledby="equipOutdoorHeading"
+>
     <div class="outdoor-equipment">
         <h2 class="outdoorH2" id="equipOutdoorHeading">Équipement extérieur</h2>
         <ul class="equipement-list">
@@ -176,7 +199,9 @@
             <li aria-label="Animaux gratuits">Animaux gratuits</li>
             <li aria-label="Linge de maison fourni">Linge de maison fourni</li>
             <li aria-label="Lits faits à l'arrivée">Lits faits à l'arrivée</li>
-            <li aria-label="Ménage fin de séjour en option*">Ménage fin de séjour en option*</li>
+            <li aria-label="Ménage fin de séjour en option*">
+                Ménage fin de séjour en option*
+            </li>
         </ul>
     </div>
 </section>
