@@ -1,6 +1,7 @@
 # Autoriser tous les robots à accéder à tout le site
 User-agent: *
 Allow: /
+Sitemap: https://www.parentheseoceane.com/sitemap.xml
 
 # Bloquer les accès aux fichiers sensibles ou non pertinents (si nécessaire)
 User-agent: *
