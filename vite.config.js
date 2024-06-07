@@ -1,6 +1,5 @@
 // Ce fichier Vite config remplace les propriétés du manifeste de l'application Web
 // Assurez-vous de définir toutes les configurations nécessaires ici pour l'apparence et le comportement de votre application Web.
-
 import path from 'path';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
@@ -26,6 +25,7 @@ export default defineConfig({
           }
         }
       },
+      external: ['/assets/main.js'], // Marquer /assets/main.js comme externe
       plugins: [
         compression({
           verbose: true,
