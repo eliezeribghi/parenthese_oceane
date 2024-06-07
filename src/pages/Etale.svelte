@@ -124,7 +124,8 @@
                                     <img
                                         class="equipements-img"
                                         src={equipement.image}
-                                        alt={equipement.alt}
+                                      
+                                        alt={`Image de ${equipement.nom}`}
                                     />
                                     <span>{equipement.nom}</span>
                                 </li>
