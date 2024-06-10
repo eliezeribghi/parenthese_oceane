@@ -51,7 +51,6 @@
   </div>
 
   <div class="carousel-wrapper" role="region" aria-labelledby="carousel-heading">
-    
     <div class="image-carousel" 
          style={`transform: translateX(${-currentImageIndex * window.innerWidth}px); width: ${containerWidth}px`} 
          role="group" 

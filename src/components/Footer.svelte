@@ -88,6 +88,7 @@
         </p>
         <a
           class="footer-mail"
+          title="Adresse e-mail"
           href="mailto:parentheseoceane@orange.fr"
           aria-label="Adresse e-mail">parentheseoceane@orange.fr</a
         >
