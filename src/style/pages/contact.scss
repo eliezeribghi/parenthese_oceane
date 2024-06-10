@@ -114,6 +114,10 @@
   .consent-text {
     margin: 3em;
     font-size: .3em;
+    p a{
+
+      color: $primary;
+    }
   }
 }
 
