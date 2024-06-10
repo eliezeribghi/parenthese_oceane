@@ -15,7 +15,7 @@
     const [{ svgPaths }] = myAccommodation;
 
     const cottage = combinedData.find((item) => item.title === "Gite 2 pièces");
-    console.log(cottage);
+ 
 
     let { name, title, description, roomComposition } = cottage;
 

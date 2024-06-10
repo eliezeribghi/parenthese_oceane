@@ -53,6 +53,7 @@ window.addEventListener('load', () => {
 
 
 
+
 let showAdditionalContent = false;
 
 function toggleText() {
@@ -145,10 +146,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Ajoutez d'autres fonctionnalités comme la gestion du scroll ici
-
-
-
 
 </script>
 
@@ -208,7 +205,7 @@ window.addEventListener("scroll", () => {
 </section>
 
 <!-- Bouton de défilement vers la première section -->
-<button id="boutonScroll" on:click={scrollToFirstSection} >
+<button id="boutonScroll" aria-label="Revenir en haut de la page" on:click={scrollToFirstSection} >
   <span></span>
 </button>
 
