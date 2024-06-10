@@ -7,7 +7,7 @@
     <div class="footer-content">
       <!-- Section "Plan du site" -->
       <div class="footer-section site-links">
-        <h1 class="footer-title">Plan du site</h1>
+        <h2 class="footer-title">Plan du site</h2>
         <div class="footer-links">
           <!-- Liens vers différentes sections du site avec Svelte Router -->
 
@@ -56,7 +56,7 @@
 
       <!-- Section "Suivez-nous" -->
       <div class="footer-section follow-us">
-        <h3 class="footer-title">Suivez-nous</h3>
+        <h2 class="footer-title">Suivez-nous</h2>
         <div class="footer-social">
           <!-- Lien Facebook avec l'icône -->
           <a
