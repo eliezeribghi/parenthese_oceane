@@ -31,15 +31,17 @@
             aria-label="StVincentsurJard"
             tabindex="0"
           >
-            StVincentsurJard</a>
+            StVincentsurJard</a
+          >
 
-          <a title=" Charte de Confidentialité"
+          <a
+            title=" Charte de Confidentialité"
             href="/privacyPolicy"
             use:link
             aria-label="Charte de Confidentialité"
             tabindex="0"
           >
-          Confidentialité</a
+            Confidentialité</a
           >
           <a
             href="/Agreement"
@@ -62,13 +64,13 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-          >Facebook <br/>
+            >Facebook <br />
             <img
               class="logo-meta"
               src="./assets/logo-meta.svg"
               alt="logo-meta"
               aria-hidden="true"
-            /> 
+            />
           </a>
           <!-- Ajoutez d'autres liens sociaux au besoin -->
         </div>
