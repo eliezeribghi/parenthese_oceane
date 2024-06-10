@@ -7,7 +7,7 @@
     <div class="footer-content">
       <!-- Section "Plan du site" -->
       <div class="footer-section site-links">
-        <h3 class="footer-title">Plan du site</h3>
+        <h2 class="footer-title">Plan du site</h2>
         <div class="footer-links">
           <!-- Liens vers différentes sections du site avec Svelte Router -->
 
