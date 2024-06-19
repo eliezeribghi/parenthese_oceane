@@ -1,11 +1,13 @@
 // Ce fichier Vite config remplace les propriétés du manifeste de l'application Web
 // Assurez-vous de définir toutes les configurations nécessaires ici pour l'apparence et le comportement de votre application Web.
+// Ce fichier Vite config remplace les propriétés du manifeste de l'application Web
+// Assurez-vous de définir toutes les configurations nécessaires ici pour l'apparence et le comportement de votre application Web.
 import path from 'path';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import compression from "vite-plugin-compression";
+import { VitePWA } from 'vite-plugin-pwa';
 import imageminPlugin from 'vite-plugin-imagemin';
-import { VitePWA } from 'vite-plugin-pwa'; // Import du plugin PWA
+import compression from 'vite-plugin-compression';
 
 export default defineConfig({
   base: '/',
@@ -25,7 +27,6 @@ export default defineConfig({
           }
         }
       },
-      external: ['/assets/main.js'], // Marquer /assets/main.js comme externe
       plugins: [
         compression({
           verbose: true,
@@ -34,16 +35,19 @@ export default defineConfig({
           algorithm: 'gzip',
           ext: '.gz'
         }),
-        imageminPlugin(), // Ajout du plugin d'optimisation des images
-        {
-          name: 'alias-assets',
-          resolveId(source) {
-            if (source === '$lib') {
-              return { id: path.resolve('./src/assets') };
-            }
-            return null;
-          },
-        },
+        imageminPlugin({
+          gifsicle: { optimizationLevel: 7 },
+          optipng: { optimizationLevel: 7 },
+          mozjpeg: { quality: 80 },
+          pngquant: { quality: [0.65, 0.8], speed: 4 },
+          svgo: {
+            plugins: [
+              { removeViewBox: false },
+              { removeEmptyAttrs: false },
+              { removeDimensions: true }
+            ]
+          }
+        })
       ],
     },
   },
@@ -59,18 +63,18 @@ export default defineConfig({
         theme_color: '#1e55b3',
         icons: [
           {
-            src: '/pwa-192x192.png',
+            src: 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/icon-maskable.png',
+            src: 'icon-maskable.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
           },
           {
-            src: '/pwa-144x144.png',
+            src: 'pwa-144x144.png',
             sizes: '144x144',
             type: 'image/png'
           }
@@ -85,6 +89,28 @@ export default defineConfig({
         "twitter:description": "Découvrez notre site de location de gîtes en Vendée pour des vacances inoubliables. Explorez nos hébergements, consultez nos tarifs compétitifs et trouvez toutes les informations légales dont vous avez besoin. Réservez dès maintenant et vivez des moments de détente et de plaisir au cœur de la nature vendéenne.",
         "twitter:image": "https://www.parentheseoceane.com/favicon.svg"
       }
-    })
+    }),
+    {
+      name: 'alias-assets',
+      resolveId(source) {
+        if (source === '$lib') {
+          return { id: path.resolve('./src/assets') };
+        }
+        return null;
+      },
+    },
+    {
+      name: 'preload',
+      transformIndexHtml(html) {
+        return html.replace(
+          '</head>',
+          `
+          <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap">
+          <link rel="preload" as="image"/logo.pn">
+          </head>
+          `
+        );
+      }
+    }
   ]
 });
