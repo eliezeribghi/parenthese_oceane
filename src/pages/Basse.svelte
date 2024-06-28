@@ -1,4 +1,7 @@
 <script>
+
+
+
     import equipmentOutdoorItems from "../dataImport/equipementOutdoor";
     import equipements from "../dataImport/equipments";
     import "../style/utils/_mixins.scss";

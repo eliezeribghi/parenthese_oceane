@@ -1,4 +1,4 @@
-<script>
+<script  >
   import Router, { location } from "svelte-spa-router";
   import routes from "./routes";
  
@@ -36,15 +36,23 @@ onMount(() => {
     });
   }
 
-  // Appeler la fonction scrollToTop lorsque la route change
-  location.subscribe(() => {
-    scrollToTop();
+  onMount(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-2LLWS7B585";
+    document.head.appendChild(script);
   });
-  window.onload = function() {
-    window.scrollTo(0, 0);
-}
-
 </script>
+
+<svelte:head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2LLWS7B585');
+  </script>
+</svelte:head>
 
 
 <Header />
