@@ -47,7 +47,13 @@ const images = [
     alt: 'Femme et enfant regardant la mer',
     src: './assets/imgCarousel/pictureHome8.webp',
     title: 'Femme et enfant regardant la mer - Parenthèse Oceaner.com',
-  }
+  },
+  {
+    "alt": "Un vélo avec un escabeau près d'un arbre",
+    "src": "./assets/imgCarousel/pictureHome9.webp",
+    "title": "Un vélo avec un escabeau près d'un arbre - Parenthèse Oceaner.com"
+}
+
 ];
 
 
