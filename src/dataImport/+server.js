@@ -26,17 +26,19 @@ const images = [
     src: "./assets/imgCarousel/pictureHome9.webp",
     title: "Aire de jeux enfants près du gîte - Parenthèse Oceaner.com",
   },
-  {
-    alt: "Un vélo avec un escabeau près d'un arbre",
-    src: "./assets/imgCarousel/pictureHome10.webp",
-    title: "Un vélo avec un escabeau près d'un arbre - Parenthèse Oceaner.com",
-  },
+ 
 
   {
     alt: "Commode blanche de chevet avec lampe allumée",
     src: "./assets/imgCarousel/pictureHome5.webp",
     title: "Commode blanche de chevet - Parenthèse Oceaner.com",
   },
+ {
+    alt: "Un vélo avec un escabeau près d'un arbre",
+    src: "./assets/imgCarousel/pictureHome10.webp",
+    title: "Un vélo avec un escabeau près d'un arbre - Parenthèse Oceaner.com",
+  },
+
   {
     alt: "Joli arbre solitaire au milieu d'un champ verdoyant",
     src: "./assets/imgCarousel/pictureHome6.webp",
