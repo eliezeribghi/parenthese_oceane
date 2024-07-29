@@ -28,7 +28,7 @@ const images = [
   },
   {
     alt: "Un vélo avec un escabeau près d'un arbre",
-    src: "./assets/imgCarousel/pictureHome9.webp",
+    src: "./assets/imgCarousel/pictureHome10.webp",
     title: "Un vélo avec un escabeau près d'un arbre - Parenthèse Oceaner.com",
   },
 
