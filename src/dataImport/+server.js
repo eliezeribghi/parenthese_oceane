@@ -27,6 +27,11 @@ const images = [
     title: "Aire de jeux enfants près du gîte - Parenthèse Oceaner.com",
   },
  
+{
+    alt: "Vue sur la plage de la Vendée avec la maison de Clémenceau en arrière-plan et des arbres au bord de l'eau",
+    src: "./assets/imgCarousel/pictureHome11.webp",
+    title: "Plage de la Vendée et maison de Clémenceau - Parenthèse Oceaner.com" 
+},
 
   {
     alt: "Commode blanche de chevet avec lampe allumée",
